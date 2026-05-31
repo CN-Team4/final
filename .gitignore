@@ -1,0 +1,12 @@
+# 原始大檔（用 fetch_data.sh 下載，不入庫）
+data/raw/
+*.zip
+*.csv.part
+*.part
+# 環境
+venv/
+__pycache__/
+*.pyc
+.DS_Store
+# 臨時檢查腳本
+src/_check_*.py

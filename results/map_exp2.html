@@ -1,0 +1,2641 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_dd800dc9dab6b5e3b489e13e1ccfd4f5 {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+
+            <style>html, body {
+                width: 100%;
+                height: 100%;
+                margin: 0;
+                padding: 0;
+            }
+            </style>
+
+            <style>#map {
+                position:absolute;
+                top:0;
+                bottom:0;
+                right:0;
+                left:0;
+                }
+            </style>
+
+            <script>
+                L_NO_TOUCH = false;
+                L_DISABLE_3D = false;
+            </script>
+
+        
+</head>
+<body>
+    
+    
+            <div class="folium-map" id="map_dd800dc9dab6b5e3b489e13e1ccfd4f5" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_dd800dc9dab6b5e3b489e13e1ccfd4f5 = L.map(
+                "map_dd800dc9dab6b5e3b489e13e1ccfd4f5",
+                {
+                    center: [25.01491, 121.53438],
+                    crs: L.CRS.EPSG3857,
+                    ...{
+  "zoom": 15,
+  "zoomControl": true,
+  "preferCanvas": false,
+}
+
+                }
+            );
+            L.control.scale().addTo(map_dd800dc9dab6b5e3b489e13e1ccfd4f5);
+
+            
+
+        
+    
+            var tile_layer_f72c68b9deca657b1373307ea16a55ad = L.tileLayer(
+                "https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png",
+                {
+  "minZoom": 0,
+  "maxZoom": 20,
+  "maxNativeZoom": 20,
+  "noWrap": false,
+  "attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors \u0026copy; \u003ca href=\"https://carto.com/attributions\"\u003eCARTO\u003c/a\u003e",
+  "subdomains": "abcd",
+  "detectRetina": false,
+  "tms": false,
+  "opacity": 1,
+}
+
+            );
+        
+    
+            tile_layer_f72c68b9deca657b1373307ea16a55ad.addTo(map_dd800dc9dab6b5e3b489e13e1ccfd4f5);
+        
+    
+            var circle_marker_8c2aad393bcb96e780d0fbd88d250c49 = L.circleMarker(
+                [25.01791, 121.54242],
+                {"bubblingMouseEvents": true, "color": "#333", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#006837", "fillOpacity": 0.9, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 9, "stroke": true, "weight": 1}
+            ).addTo(map_dd800dc9dab6b5e3b489e13e1ccfd4f5);
+        
+    
+        var popup_3e693dc033ea639520283d603109e29e = L.popup({
+  "maxWidth": 260,
+});
+
+        
+            
+                var html_95c97a66c2ed0551a8c10c10f8c62810 = $(`<div id="html_95c97a66c2ed0551a8c10c10f8c62810" style="width: 100.0%; height: 100.0%;">臺大獸醫館南側<br>調度站設此 → with-info 平均 cost=7.37 分<br>Δ=4.30 分</div>`)[0];
+                popup_3e693dc033ea639520283d603109e29e.setContent(html_95c97a66c2ed0551a8c10c10f8c62810);
+            
+        
+
+        circle_marker_8c2aad393bcb96e780d0fbd88d250c49.bindPopup(popup_3e693dc033ea639520283d603109e29e)
+        ;
+
+        
+    
+    
+            circle_marker_8c2aad393bcb96e780d0fbd88d250c49.bindTooltip(
+                `<div>
+                     臺大獸醫館南側: 7.37 分
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_35677dfd30389f2a1f947ba42ec2ff2d = L.circleMarker(
+                [25.01761, 121.53995],
+                {"bubblingMouseEvents": true, "color": "#333", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#006837", "fillOpacity": 0.9, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 9, "stroke": true, "weight": 1}
+            ).addTo(map_dd800dc9dab6b5e3b489e13e1ccfd4f5);
+        
+    
+        var popup_a5606714b117661c21474368547df051 = L.popup({
+  "maxWidth": 260,
+});
+
+        
+            
+                var html_f7f3d32cc1d5038e36cb3bc734711a04 = $(`<div id="html_f7f3d32cc1d5038e36cb3bc734711a04" style="width: 100.0%; height: 100.0%;">臺大第一活動中心西南側<br>調度站設此 → with-info 平均 cost=7.38 分<br>Δ=3.89 分</div>`)[0];
+                popup_a5606714b117661c21474368547df051.setContent(html_f7f3d32cc1d5038e36cb3bc734711a04);
+            
+        
+
+        circle_marker_35677dfd30389f2a1f947ba42ec2ff2d.bindPopup(popup_a5606714b117661c21474368547df051)
+        ;
+
+        
+    
+    
+            circle_marker_35677dfd30389f2a1f947ba42ec2ff2d.bindTooltip(
+                `<div>
+                     臺大第一活動中心西南側: 7.38 分
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_e32503d26d5a62cb62a2c1491c3bad1e = L.circleMarker(
+                [25.01857, 121.54059],
+                {"bubblingMouseEvents": true, "color": "#333", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#016a38", "fillOpacity": 0.9, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 9, "stroke": true, "weight": 1}
+            ).addTo(map_dd800dc9dab6b5e3b489e13e1ccfd4f5);
+        
+    
+        var popup_d494923153f0df1f4fb20fbf701bfd72 = L.popup({
+  "maxWidth": 260,
+});
+
+        
+            
+                var html_13af4b4678b19d4fdad1f96cb632adc8 = $(`<div id="html_13af4b4678b19d4fdad1f96cb632adc8" style="width: 100.0%; height: 100.0%;">臺大工綜館南側<br>調度站設此 → with-info 平均 cost=7.38 分<br>Δ=4.16 分</div>`)[0];
+                popup_d494923153f0df1f4fb20fbf701bfd72.setContent(html_13af4b4678b19d4fdad1f96cb632adc8);
+            
+        
+
+        circle_marker_e32503d26d5a62cb62a2c1491c3bad1e.bindPopup(popup_d494923153f0df1f4fb20fbf701bfd72)
+        ;
+
+        
+    
+    
+            circle_marker_e32503d26d5a62cb62a2c1491c3bad1e.bindTooltip(
+                `<div>
+                     臺大工綜館南側: 7.38 分
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_a1422b5bfe88726a76af2aa37f01e9bf = L.circleMarker(
+                [25.01857, 121.54247],
+                {"bubblingMouseEvents": true, "color": "#333", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#026c39", "fillOpacity": 0.9, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 9, "stroke": true, "weight": 1}
+            ).addTo(map_dd800dc9dab6b5e3b489e13e1ccfd4f5);
+        
+    
+        var popup_aff02280df850e3792e087574c5778bd = L.popup({
+  "maxWidth": 260,
+});
+
+        
+            
+                var html_64038018b7957986a5a1a3657dc0da00 = $(`<div id="html_64038018b7957986a5a1a3657dc0da00" style="width: 100.0%; height: 100.0%;">臺大電機二館東南側<br>調度站設此 → with-info 平均 cost=7.40 分<br>Δ=3.96 分</div>`)[0];
+                popup_aff02280df850e3792e087574c5778bd.setContent(html_64038018b7957986a5a1a3657dc0da00);
+            
+        
+
+        circle_marker_a1422b5bfe88726a76af2aa37f01e9bf.bindPopup(popup_aff02280df850e3792e087574c5778bd)
+        ;
+
+        
+    
+    
+            circle_marker_a1422b5bfe88726a76af2aa37f01e9bf.bindTooltip(
+                `<div>
+                     臺大電機二館東南側: 7.40 分
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_23aaa84e88eb85ee56eef5d2d388392e = L.circleMarker(
+                [25.0169, 121.54031],
+                {"bubblingMouseEvents": true, "color": "#333", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#08773f", "fillOpacity": 0.9, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 9, "stroke": true, "weight": 1}
+            ).addTo(map_dd800dc9dab6b5e3b489e13e1ccfd4f5);
+        
+    
+        var popup_ee2e843756bce4a3f7459dab87af7213 = L.popup({
+  "maxWidth": 260,
+});
+
+        
+            
+                var html_3e6b54b7ac49f05fcfb5bbec6a73ed81 = $(`<div id="html_3e6b54b7ac49f05fcfb5bbec6a73ed81" style="width: 100.0%; height: 100.0%;">臺大總圖書館西南側<br>調度站設此 → with-info 平均 cost=7.46 分<br>Δ=3.66 分</div>`)[0];
+                popup_ee2e843756bce4a3f7459dab87af7213.setContent(html_3e6b54b7ac49f05fcfb5bbec6a73ed81);
+            
+        
+
+        circle_marker_23aaa84e88eb85ee56eef5d2d388392e.bindPopup(popup_ee2e843756bce4a3f7459dab87af7213)
+        ;
+
+        
+    
+    
+            circle_marker_23aaa84e88eb85ee56eef5d2d388392e.bindTooltip(
+                `<div>
+                     臺大總圖書館西南側: 7.46 分
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_dfdf72032c0e3ed3d132fe3af97f380f = L.circleMarker(
+                [25.01854, 121.54309],
+                {"bubblingMouseEvents": true, "color": "#333", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#118848", "fillOpacity": 0.9, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 9, "stroke": true, "weight": 1}
+            ).addTo(map_dd800dc9dab6b5e3b489e13e1ccfd4f5);
+        
+    
+        var popup_dc74c7ddfd102627db434a4d325160d2 = L.popup({
+  "maxWidth": 260,
+});
+
+        
+            
+                var html_70c321b7a20afb61a759e4750a2b5aad = $(`<div id="html_70c321b7a20afb61a759e4750a2b5aad" style="width: 100.0%; height: 100.0%;">臺大鄭江樓北側<br>調度站設此 → with-info 平均 cost=7.56 分<br>Δ=3.91 分</div>`)[0];
+                popup_dc74c7ddfd102627db434a4d325160d2.setContent(html_70c321b7a20afb61a759e4750a2b5aad);
+            
+        
+
+        circle_marker_dfdf72032c0e3ed3d132fe3af97f380f.bindPopup(popup_dc74c7ddfd102627db434a4d325160d2)
+        ;
+
+        
+    
+    
+            circle_marker_dfdf72032c0e3ed3d132fe3af97f380f.bindTooltip(
+                `<div>
+                     臺大鄭江樓北側: 7.56 分
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_5cfc11584469c05de7f5b383bba75946 = L.circleMarker(
+                [25.01804, 121.53928],
+                {"bubblingMouseEvents": true, "color": "#333", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#118848", "fillOpacity": 0.9, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 9, "stroke": true, "weight": 1}
+            ).addTo(map_dd800dc9dab6b5e3b489e13e1ccfd4f5);
+        
+    
+        var popup_be4d24c4496d015398b4c9ef07c4421b = L.popup({
+  "maxWidth": 260,
+});
+
+        
+            
+                var html_eae664a26488129d301b9e0e9221a073 = $(`<div id="html_eae664a26488129d301b9e0e9221a073" style="width: 100.0%; height: 100.0%;">臺大圖資系館北側<br>調度站設此 → with-info 平均 cost=7.56 分<br>Δ=4.11 分</div>`)[0];
+                popup_be4d24c4496d015398b4c9ef07c4421b.setContent(html_eae664a26488129d301b9e0e9221a073);
+            
+        
+
+        circle_marker_5cfc11584469c05de7f5b383bba75946.bindPopup(popup_be4d24c4496d015398b4c9ef07c4421b)
+        ;
+
+        
+    
+    
+            circle_marker_5cfc11584469c05de7f5b383bba75946.bindTooltip(
+                `<div>
+                     臺大圖資系館北側: 7.56 分
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_f239a6f6d50081d4181c4c0cf4a559c6 = L.circleMarker(
+                [25.01922, 121.54195],
+                {"bubblingMouseEvents": true, "color": "#333", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#148e4b", "fillOpacity": 0.9, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 9, "stroke": true, "weight": 1}
+            ).addTo(map_dd800dc9dab6b5e3b489e13e1ccfd4f5);
+        
+    
+        var popup_dbe8c210c3765f40149c3286d886c105 = L.popup({
+  "maxWidth": 260,
+});
+
+        
+            
+                var html_dcc1734372002db8d270d361389228d2 = $(`<div id="html_dcc1734372002db8d270d361389228d2" style="width: 100.0%; height: 100.0%;">臺大博理館西側<br>調度站設此 → with-info 平均 cost=7.59 分<br>Δ=3.88 分</div>`)[0];
+                popup_dbe8c210c3765f40149c3286d886c105.setContent(html_dcc1734372002db8d270d361389228d2);
+            
+        
+
+        circle_marker_f239a6f6d50081d4181c4c0cf4a559c6.bindPopup(popup_dbe8c210c3765f40149c3286d886c105)
+        ;
+
+        
+    
+    
+            circle_marker_f239a6f6d50081d4181c4c0cf4a559c6.bindTooltip(
+                `<div>
+                     臺大博理館西側: 7.59 分
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_1b542d49ddc959f8d9d5867460b99430 = L.circleMarker(
+                [25.01941, 121.5404],
+                {"bubblingMouseEvents": true, "color": "#333", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#199750", "fillOpacity": 0.9, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 9, "stroke": true, "weight": 1}
+            ).addTo(map_dd800dc9dab6b5e3b489e13e1ccfd4f5);
+        
+    
+        var popup_5b4c733bd1467496933e74bc6ff08fd7 = L.popup({
+  "maxWidth": 260,
+});
+
+        
+            
+                var html_30b6755b7d5560e1e38110f072aa7003 = $(`<div id="html_30b6755b7d5560e1e38110f072aa7003" style="width: 100.0%; height: 100.0%;">臺大心理系館南側<br>調度站設此 → with-info 平均 cost=7.64 分<br>Δ=3.79 分</div>`)[0];
+                popup_5b4c733bd1467496933e74bc6ff08fd7.setContent(html_30b6755b7d5560e1e38110f072aa7003);
+            
+        
+
+        circle_marker_1b542d49ddc959f8d9d5867460b99430.bindPopup(popup_5b4c733bd1467496933e74bc6ff08fd7)
+        ;
+
+        
+    
+    
+            circle_marker_1b542d49ddc959f8d9d5867460b99430.bindTooltip(
+                `<div>
+                     臺大心理系館南側: 7.64 分
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_d1ad87318e5f4e74560b0cd5ae72f9f6 = L.circleMarker(
+                [25.01616, 121.54251],
+                {"bubblingMouseEvents": true, "color": "#333", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#42ac5a", "fillOpacity": 0.9, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 9, "stroke": true, "weight": 1}
+            ).addTo(map_dd800dc9dab6b5e3b489e13e1ccfd4f5);
+        
+    
+        var popup_13bed2d183b5286dcebddc3446a9705c = L.popup({
+  "maxWidth": 260,
+});
+
+        
+            
+                var html_f7438b767e4cc822ebbf542d0f928578 = $(`<div id="html_f7438b767e4cc822ebbf542d0f928578" style="width: 100.0%; height: 100.0%;">臺大立體機車停車場<br>調度站設此 → with-info 平均 cost=7.79 分<br>Δ=3.82 分</div>`)[0];
+                popup_13bed2d183b5286dcebddc3446a9705c.setContent(html_f7438b767e4cc822ebbf542d0f928578);
+            
+        
+
+        circle_marker_d1ad87318e5f4e74560b0cd5ae72f9f6.bindPopup(popup_13bed2d183b5286dcebddc3446a9705c)
+        ;
+
+        
+    
+    
+            circle_marker_d1ad87318e5f4e74560b0cd5ae72f9f6.bindTooltip(
+                `<div>
+                     臺大立體機車停車場: 7.79 分
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_b8045bcd40100ca5aea97fd730ef6777 = L.circleMarker(
+                [25.01761, 121.53844],
+                {"bubblingMouseEvents": true, "color": "#333", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#48ae5c", "fillOpacity": 0.9, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 9, "stroke": true, "weight": 1}
+            ).addTo(map_dd800dc9dab6b5e3b489e13e1ccfd4f5);
+        
+    
+        var popup_f3250246fe6f55e14255999d02de35f6 = L.popup({
+  "maxWidth": 260,
+});
+
+        
+            
+                var html_81c3f13e095f85d7278091df59a12b4a = $(`<div id="html_81c3f13e095f85d7278091df59a12b4a" style="width: 100.0%; height: 100.0%;">臺大土木系館<br>調度站設此 → with-info 平均 cost=7.81 分<br>Δ=3.85 分</div>`)[0];
+                popup_f3250246fe6f55e14255999d02de35f6.setContent(html_81c3f13e095f85d7278091df59a12b4a);
+            
+        
+
+        circle_marker_b8045bcd40100ca5aea97fd730ef6777.bindPopup(popup_f3250246fe6f55e14255999d02de35f6)
+        ;
+
+        
+    
+    
+            circle_marker_b8045bcd40100ca5aea97fd730ef6777.bindTooltip(
+                `<div>
+                     臺大土木系館: 7.81 分
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_270575e0381565f686da77c75811a928 = L.circleMarker(
+                [25.01881, 121.53868],
+                {"bubblingMouseEvents": true, "color": "#333", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#48ae5c", "fillOpacity": 0.9, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 9, "stroke": true, "weight": 1}
+            ).addTo(map_dd800dc9dab6b5e3b489e13e1ccfd4f5);
+        
+    
+        var popup_3151eb7ddbe2d3a92f87c8dfa3381899 = L.popup({
+  "maxWidth": 260,
+});
+
+        
+            
+                var html_7f64c6e48cdf54f8d0dcdba676107fa5 = $(`<div id="html_7f64c6e48cdf54f8d0dcdba676107fa5" style="width: 100.0%; height: 100.0%;">臺大原分所北側<br>調度站設此 → with-info 平均 cost=7.81 分<br>Δ=3.56 分</div>`)[0];
+                popup_3151eb7ddbe2d3a92f87c8dfa3381899.setContent(html_7f64c6e48cdf54f8d0dcdba676107fa5);
+            
+        
+
+        circle_marker_270575e0381565f686da77c75811a928.bindPopup(popup_3151eb7ddbe2d3a92f87c8dfa3381899)
+        ;
+
+        
+    
+    
+            circle_marker_270575e0381565f686da77c75811a928.bindTooltip(
+                `<div>
+                     臺大原分所北側: 7.81 分
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_17ebbb9d5ed0e8d7ef788db818790651 = L.circleMarker(
+                [25.01944, 121.54339],
+                {"bubblingMouseEvents": true, "color": "#333", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#48ae5c", "fillOpacity": 0.9, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 9, "stroke": true, "weight": 1}
+            ).addTo(map_dd800dc9dab6b5e3b489e13e1ccfd4f5);
+        
+    
+        var popup_a8ac98d145e41e33b6355e0dbd2236a0 = L.popup({
+  "maxWidth": 260,
+});
+
+        
+            
+                var html_d4a3dbaee1a616b7b7100136c7abdec6 = $(`<div id="html_d4a3dbaee1a616b7b7100136c7abdec6" style="width: 100.0%; height: 100.0%;">臺大學新館<br>調度站設此 → with-info 平均 cost=7.81 分<br>Δ=3.62 分</div>`)[0];
+                popup_a8ac98d145e41e33b6355e0dbd2236a0.setContent(html_d4a3dbaee1a616b7b7100136c7abdec6);
+            
+        
+
+        circle_marker_17ebbb9d5ed0e8d7ef788db818790651.bindPopup(popup_a8ac98d145e41e33b6355e0dbd2236a0)
+        ;
+
+        
+    
+    
+            circle_marker_17ebbb9d5ed0e8d7ef788db818790651.bindTooltip(
+                `<div>
+                     臺大學新館: 7.81 分
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_e0bf08cb4c00e9dfceb63c2fd2bb0f47 = L.circleMarker(
+                [25.01754, 121.54398],
+                {"bubblingMouseEvents": true, "color": "#333", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#4bb05c", "fillOpacity": 0.9, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 9, "stroke": true, "weight": 1}
+            ).addTo(map_dd800dc9dab6b5e3b489e13e1ccfd4f5);
+        
+    
+        var popup_b72b8504bb4223f135ad8aac5284f6e5 = L.popup({
+  "maxWidth": 260,
+});
+
+        
+            
+                var html_90fb0d92ef4aa8f584b8bad24f359aba = $(`<div id="html_90fb0d92ef4aa8f584b8bad24f359aba" style="width: 100.0%; height: 100.0%;">臺大明達館機車停車場<br>調度站設此 → with-info 平均 cost=7.82 分<br>Δ=3.85 分</div>`)[0];
+                popup_b72b8504bb4223f135ad8aac5284f6e5.setContent(html_90fb0d92ef4aa8f584b8bad24f359aba);
+            
+        
+
+        circle_marker_e0bf08cb4c00e9dfceb63c2fd2bb0f47.bindPopup(popup_b72b8504bb4223f135ad8aac5284f6e5)
+        ;
+
+        
+    
+    
+            circle_marker_e0bf08cb4c00e9dfceb63c2fd2bb0f47.bindTooltip(
+                `<div>
+                     臺大明達館機車停車場: 7.82 分
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_92ad384c0fa8ef8188aaf2aa373b884a = L.circleMarker(
+                [25.01987, 121.54175],
+                {"bubblingMouseEvents": true, "color": "#333", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#4eb15d", "fillOpacity": 0.9, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 9, "stroke": true, "weight": 1}
+            ).addTo(map_dd800dc9dab6b5e3b489e13e1ccfd4f5);
+        
+    
+        var popup_3f03c302c399be23f8a753b65e0b6e07 = L.popup({
+  "maxWidth": 260,
+});
+
+        
+            
+                var html_529ee33cd96620613fda5493f6109f37 = $(`<div id="html_529ee33cd96620613fda5493f6109f37" style="width: 100.0%; height: 100.0%;">臺大社會系館南側<br>調度站設此 → with-info 平均 cost=7.83 分<br>Δ=3.61 分</div>`)[0];
+                popup_3f03c302c399be23f8a753b65e0b6e07.setContent(html_529ee33cd96620613fda5493f6109f37);
+            
+        
+
+        circle_marker_92ad384c0fa8ef8188aaf2aa373b884a.bindPopup(popup_3f03c302c399be23f8a753b65e0b6e07)
+        ;
+
+        
+    
+    
+            circle_marker_92ad384c0fa8ef8188aaf2aa373b884a.bindTooltip(
+                `<div>
+                     臺大社會系館南側: 7.83 分
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_04a0b8ecab98522d69fa5263fa31acef = L.circleMarker(
+                [25.01704, 121.53888],
+                {"bubblingMouseEvents": true, "color": "#333", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#60ba62", "fillOpacity": 0.9, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 9, "stroke": true, "weight": 1}
+            ).addTo(map_dd800dc9dab6b5e3b489e13e1ccfd4f5);
+        
+    
+        var popup_6d67afab4622c15701c3e7796ee9e5a8 = L.popup({
+  "maxWidth": 260,
+});
+
+        
+            
+                var html_e6c473d0834dafa3cc42e5cd9f0d6d5c = $(`<div id="html_e6c473d0834dafa3cc42e5cd9f0d6d5c" style="width: 100.0%; height: 100.0%;">臺大森林館北側<br>調度站設此 → with-info 平均 cost=7.89 分<br>Δ=3.71 分</div>`)[0];
+                popup_6d67afab4622c15701c3e7796ee9e5a8.setContent(html_e6c473d0834dafa3cc42e5cd9f0d6d5c);
+            
+        
+
+        circle_marker_04a0b8ecab98522d69fa5263fa31acef.bindPopup(popup_6d67afab4622c15701c3e7796ee9e5a8)
+        ;
+
+        
+    
+    
+            circle_marker_04a0b8ecab98522d69fa5263fa31acef.bindTooltip(
+                `<div>
+                     臺大森林館北側: 7.89 分
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_a4b57040db1bb39cb900196d27a8aa56 = L.circleMarker(
+                [25.01995, 121.54347],
+                {"bubblingMouseEvents": true, "color": "#333", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#75c465", "fillOpacity": 0.9, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 9, "stroke": true, "weight": 1}
+            ).addTo(map_dd800dc9dab6b5e3b489e13e1ccfd4f5);
+        
+    
+        var popup_bea9d7fd4610ba8227726567847ebd12 = L.popup({
+  "maxWidth": 260,
+});
+
+        
+            
+                var html_132d8f1cef85a1c8e53c4af62dc304a0 = $(`<div id="html_132d8f1cef85a1c8e53c4af62dc304a0" style="width: 100.0%; height: 100.0%;">臺大黑森林西側<br>調度站設此 → with-info 平均 cost=7.98 分<br>Δ=3.50 分</div>`)[0];
+                popup_bea9d7fd4610ba8227726567847ebd12.setContent(html_132d8f1cef85a1c8e53c4af62dc304a0);
+            
+        
+
+        circle_marker_a4b57040db1bb39cb900196d27a8aa56.bindPopup(popup_bea9d7fd4610ba8227726567847ebd12)
+        ;
+
+        
+    
+    
+            circle_marker_a4b57040db1bb39cb900196d27a8aa56.bindTooltip(
+                `<div>
+                     臺大黑森林西側: 7.98 分
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_c3f77a4ca8f679f36ca845397000dcc2 = L.circleMarker(
+                [25.01816, 121.54469],
+                {"bubblingMouseEvents": true, "color": "#333", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#84ca66", "fillOpacity": 0.9, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 9, "stroke": true, "weight": 1}
+            ).addTo(map_dd800dc9dab6b5e3b489e13e1ccfd4f5);
+        
+    
+        var popup_9c46bbe5cc9af77b50c09d7819753ee0 = L.popup({
+  "maxWidth": 260,
+});
+
+        
+            
+                var html_1d91ae5933ec142bdd877ee9bb519f81 = $(`<div id="html_1d91ae5933ec142bdd877ee9bb519f81" style="width: 100.0%; height: 100.0%;">臺大明達館北側(員工宿舍)<br>調度站設此 → with-info 平均 cost=8.04 分<br>Δ=3.64 分</div>`)[0];
+                popup_9c46bbe5cc9af77b50c09d7819753ee0.setContent(html_1d91ae5933ec142bdd877ee9bb519f81);
+            
+        
+
+        circle_marker_c3f77a4ca8f679f36ca845397000dcc2.bindPopup(popup_9c46bbe5cc9af77b50c09d7819753ee0)
+        ;
+
+        
+    
+    
+            circle_marker_c3f77a4ca8f679f36ca845397000dcc2.bindTooltip(
+                `<div>
+                     臺大明達館北側(員工宿舍): 8.04 分
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_78c742852882a18fce70e33982c01d67 = L.circleMarker(
+                [25.01981, 121.53903],
+                {"bubblingMouseEvents": true, "color": "#333", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#84ca66", "fillOpacity": 0.9, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 9, "stroke": true, "weight": 1}
+            ).addTo(map_dd800dc9dab6b5e3b489e13e1ccfd4f5);
+        
+    
+        var popup_e45c87e7ac4dec7be45e10d444ebc608 = L.popup({
+  "maxWidth": 260,
+});
+
+        
+            
+                var html_03d5a9ae0fe83583033ad5e67b5afe86 = $(`<div id="html_03d5a9ae0fe83583033ad5e67b5afe86" style="width: 100.0%; height: 100.0%;">臺大女九舍西南側<br>調度站設此 → with-info 平均 cost=8.04 分<br>Δ=3.56 分</div>`)[0];
+                popup_e45c87e7ac4dec7be45e10d444ebc608.setContent(html_03d5a9ae0fe83583033ad5e67b5afe86);
+            
+        
+
+        circle_marker_78c742852882a18fce70e33982c01d67.bindPopup(popup_e45c87e7ac4dec7be45e10d444ebc608)
+        ;
+
+        
+    
+    
+            circle_marker_78c742852882a18fce70e33982c01d67.bindTooltip(
+                `<div>
+                     臺大女九舍西南側: 8.04 分
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_bdfdd885af37a44b552d225c2ce64256 = L.circleMarker(
+                [25.02036, 121.53992],
+                {"bubblingMouseEvents": true, "color": "#333", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#8ccd67", "fillOpacity": 0.9, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 9, "stroke": true, "weight": 1}
+            ).addTo(map_dd800dc9dab6b5e3b489e13e1ccfd4f5);
+        
+    
+        var popup_a1d0743cceed0cea8089d3c6745a7e20 = L.popup({
+  "maxWidth": 260,
+});
+
+        
+            
+                var html_c485315feb5952b6ee698b56fe8d3436 = $(`<div id="html_c485315feb5952b6ee698b56fe8d3436" style="width: 100.0%; height: 100.0%;">臺大計資中心南側<br>調度站設此 → with-info 平均 cost=8.08 分<br>Δ=3.59 分</div>`)[0];
+                popup_a1d0743cceed0cea8089d3c6745a7e20.setContent(html_c485315feb5952b6ee698b56fe8d3436);
+            
+        
+
+        circle_marker_bdfdd885af37a44b552d225c2ce64256.bindPopup(popup_a1d0743cceed0cea8089d3c6745a7e20)
+        ;
+
+        
+    
+    
+            circle_marker_bdfdd885af37a44b552d225c2ce64256.bindTooltip(
+                `<div>
+                     臺大計資中心南側: 8.08 分
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_dbfcc748fe0042c71a1f770ace345e27 = L.circleMarker(
+                [25.02053, 121.54145],
+                {"bubblingMouseEvents": true, "color": "#333", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#8ecf67", "fillOpacity": 0.9, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 9, "stroke": true, "weight": 1}
+            ).addTo(map_dd800dc9dab6b5e3b489e13e1ccfd4f5);
+        
+    
+        var popup_4633e33c79b0d5228a1a25e98e73e595 = L.popup({
+  "maxWidth": 260,
+});
+
+        
+            
+                var html_cfe632c50129b7fcc76b23d2ef49fd9e = $(`<div id="html_cfe632c50129b7fcc76b23d2ef49fd9e" style="width: 100.0%; height: 100.0%;">臺大社科院西側<br>調度站設此 → with-info 平均 cost=8.08 分<br>Δ=3.47 分</div>`)[0];
+                popup_4633e33c79b0d5228a1a25e98e73e595.setContent(html_cfe632c50129b7fcc76b23d2ef49fd9e);
+            
+        
+
+        circle_marker_dbfcc748fe0042c71a1f770ace345e27.bindPopup(popup_4633e33c79b0d5228a1a25e98e73e595)
+        ;
+
+        
+    
+    
+            circle_marker_dbfcc748fe0042c71a1f770ace345e27.bindTooltip(
+                `<div>
+                     臺大社科院西側: 8.08 分
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_966a99fc185660293b976d229710479d = L.circleMarker(
+                [25.01846, 121.5376],
+                {"bubblingMouseEvents": true, "color": "#333", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#96d268", "fillOpacity": 0.9, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 9, "stroke": true, "weight": 1}
+            ).addTo(map_dd800dc9dab6b5e3b489e13e1ccfd4f5);
+        
+    
+        var popup_d0726219f8f7924c3b093c077d529b79 = L.popup({
+  "maxWidth": 260,
+});
+
+        
+            
+                var html_7e5783e2a02cc1a84682f48434a3cb8f = $(`<div id="html_7e5783e2a02cc1a84682f48434a3cb8f" style="width: 100.0%; height: 100.0%;">臺大小福樓東側<br>調度站設此 → with-info 平均 cost=8.12 分<br>Δ=3.55 分</div>`)[0];
+                popup_d0726219f8f7924c3b093c077d529b79.setContent(html_7e5783e2a02cc1a84682f48434a3cb8f);
+            
+        
+
+        circle_marker_966a99fc185660293b976d229710479d.bindPopup(popup_d0726219f8f7924c3b093c077d529b79)
+        ;
+
+        
+    
+    
+            circle_marker_966a99fc185660293b976d229710479d.bindTooltip(
+                `<div>
+                     臺大小福樓東側: 8.12 分
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_293906eafd87d3db7d20acb3b4ba30d5 = L.circleMarker(
+                [25.01576, 121.54291],
+                {"bubblingMouseEvents": true, "color": "#333", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#98d368", "fillOpacity": 0.9, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 9, "stroke": true, "weight": 1}
+            ).addTo(map_dd800dc9dab6b5e3b489e13e1ccfd4f5);
+        
+    
+        var popup_d8fe98a8233750b61b56f3da05c16309 = L.popup({
+  "maxWidth": 260,
+});
+
+        
+            
+                var html_63c028714efda6d46f542554b844f1bb = $(`<div id="html_63c028714efda6d46f542554b844f1bb" style="width: 100.0%; height: 100.0%;">臺大動物醫院前<br>調度站設此 → with-info 平均 cost=8.12 分<br>Δ=3.24 分</div>`)[0];
+                popup_d8fe98a8233750b61b56f3da05c16309.setContent(html_63c028714efda6d46f542554b844f1bb);
+            
+        
+
+        circle_marker_293906eafd87d3db7d20acb3b4ba30d5.bindPopup(popup_d8fe98a8233750b61b56f3da05c16309)
+        ;
+
+        
+    
+    
+            circle_marker_293906eafd87d3db7d20acb3b4ba30d5.bindTooltip(
+                `<div>
+                     臺大動物醫院前: 8.12 分
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_faae85d0e4ddc1c41f7054d524cf23ea = L.circleMarker(
+                [25.0196, 121.53846],
+                {"bubblingMouseEvents": true, "color": "#333", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#9bd469", "fillOpacity": 0.9, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 9, "stroke": true, "weight": 1}
+            ).addTo(map_dd800dc9dab6b5e3b489e13e1ccfd4f5);
+        
+    
+        var popup_58b8bdf7fee28042bb937dd995aeef10 = L.popup({
+  "maxWidth": 260,
+});
+
+        
+            
+                var html_daf0d563a539c3e1f864414464483732 = $(`<div id="html_daf0d563a539c3e1f864414464483732" style="width: 100.0%; height: 100.0%;">臺大新生教室南側<br>調度站設此 → with-info 平均 cost=8.14 分<br>Δ=3.32 分</div>`)[0];
+                popup_58b8bdf7fee28042bb937dd995aeef10.setContent(html_daf0d563a539c3e1f864414464483732);
+            
+        
+
+        circle_marker_faae85d0e4ddc1c41f7054d524cf23ea.bindPopup(popup_58b8bdf7fee28042bb937dd995aeef10)
+        ;
+
+        
+    
+    
+            circle_marker_faae85d0e4ddc1c41f7054d524cf23ea.bindTooltip(
+                `<div>
+                     臺大新生教室南側: 8.14 分
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_11f2cdd9ac26abfd1c07cbda73ca6714 = L.circleMarker(
+                [25.01729, 121.54531],
+                {"bubblingMouseEvents": true, "color": "#333", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#abdb6d", "fillOpacity": 0.9, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 9, "stroke": true, "weight": 1}
+            ).addTo(map_dd800dc9dab6b5e3b489e13e1ccfd4f5);
+        
+    
+        var popup_e4d3a9efa822926d5cb50e07b9168777 = L.popup({
+  "maxWidth": 260,
+});
+
+        
+            
+                var html_c48d782ab326f481ca1166ef614e0ee4 = $(`<div id="html_c48d782ab326f481ca1166ef614e0ee4" style="width: 100.0%; height: 100.0%;">臺大男八舍東側<br>調度站設此 → with-info 平均 cost=8.21 分<br>Δ=3.46 分</div>`)[0];
+                popup_e4d3a9efa822926d5cb50e07b9168777.setContent(html_c48d782ab326f481ca1166ef614e0ee4);
+            
+        
+
+        circle_marker_11f2cdd9ac26abfd1c07cbda73ca6714.bindPopup(popup_e4d3a9efa822926d5cb50e07b9168777)
+        ;
+
+        
+    
+    
+            circle_marker_11f2cdd9ac26abfd1c07cbda73ca6714.bindTooltip(
+                `<div>
+                     臺大男八舍東側: 8.21 分
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_15fd08c42c9abb6be6b2771337204ef6 = L.circleMarker(
+                [25.01664, 121.5452],
+                {"bubblingMouseEvents": true, "color": "#333", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#b3df72", "fillOpacity": 0.9, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 9, "stroke": true, "weight": 1}
+            ).addTo(map_dd800dc9dab6b5e3b489e13e1ccfd4f5);
+        
+    
+        var popup_f052f8630a379bc679592d3c574902d6 = L.popup({
+  "maxWidth": 260,
+});
+
+        
+            
+                var html_27de99d6353865c2b916c272ff77c011 = $(`<div id="html_27de99d6353865c2b916c272ff77c011" style="width: 100.0%; height: 100.0%;">臺大男六舍前<br>調度站設此 → with-info 平均 cost=8.25 分<br>Δ=2.93 分</div>`)[0];
+                popup_f052f8630a379bc679592d3c574902d6.setContent(html_27de99d6353865c2b916c272ff77c011);
+            
+        
+
+        circle_marker_15fd08c42c9abb6be6b2771337204ef6.bindPopup(popup_f052f8630a379bc679592d3c574902d6)
+        ;
+
+        
+    
+    
+            circle_marker_15fd08c42c9abb6be6b2771337204ef6.bindTooltip(
+                `<div>
+                     臺大男六舍前: 8.25 分
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_e742768231251729ce3604e187194976 = L.circleMarker(
+                [25.02101, 121.54153],
+                {"bubblingMouseEvents": true, "color": "#333", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#bfe47a", "fillOpacity": 0.9, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 9, "stroke": true, "weight": 1}
+            ).addTo(map_dd800dc9dab6b5e3b489e13e1ccfd4f5);
+        
+    
+        var popup_75199eb3f92c2ca93fbed8d4a62d97bc = L.popup({
+  "maxWidth": 260,
+});
+
+        
+            
+                var html_8e449e76075f54aa046879392f96f4e0 = $(`<div id="html_8e449e76075f54aa046879392f96f4e0" style="width: 100.0%; height: 100.0%;">臺大資訊大樓<br>調度站設此 → with-info 平均 cost=8.31 分<br>Δ=2.88 分</div>`)[0];
+                popup_75199eb3f92c2ca93fbed8d4a62d97bc.setContent(html_8e449e76075f54aa046879392f96f4e0);
+            
+        
+
+        circle_marker_e742768231251729ce3604e187194976.bindPopup(popup_75199eb3f92c2ca93fbed8d4a62d97bc)
+        ;
+
+        
+    
+    
+            circle_marker_e742768231251729ce3604e187194976.bindTooltip(
+                `<div>
+                     臺大資訊大樓: 8.31 分
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_23e7209f29072d14e82877a0272b054e = L.circleMarker(
+                [25.01637, 121.54535],
+                {"bubblingMouseEvents": true, "color": "#333", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#c9e881", "fillOpacity": 0.9, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 9, "stroke": true, "weight": 1}
+            ).addTo(map_dd800dc9dab6b5e3b489e13e1ccfd4f5);
+        
+    
+        var popup_df0aa37d8ecec7fc6e05e98b876e5e68 = L.popup({
+  "maxWidth": 260,
+});
+
+        
+            
+                var html_4fb633a39efce17cc03e38871dcef923 = $(`<div id="html_4fb633a39efce17cc03e38871dcef923" style="width: 100.0%; height: 100.0%;">臺大男一舍前<br>調度站設此 → with-info 平均 cost=8.37 分<br>Δ=3.05 分</div>`)[0];
+                popup_df0aa37d8ecec7fc6e05e98b876e5e68.setContent(html_4fb633a39efce17cc03e38871dcef923);
+            
+        
+
+        circle_marker_23e7209f29072d14e82877a0272b054e.bindPopup(popup_df0aa37d8ecec7fc6e05e98b876e5e68)
+        ;
+
+        
+    
+    
+            circle_marker_23e7209f29072d14e82877a0272b054e.bindTooltip(
+                `<div>
+                     臺大男一舍前: 8.37 分
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_c7d6c5337db7e149445947e1f1e7bfa3 = L.circleMarker(
+                [25.01703, 121.53781],
+                {"bubblingMouseEvents": true, "color": "#333", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#cbe982", "fillOpacity": 0.9, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 9, "stroke": true, "weight": 1}
+            ).addTo(map_dd800dc9dab6b5e3b489e13e1ccfd4f5);
+        
+    
+        var popup_7e645305c03840ac4d543b5d220f5868 = L.popup({
+  "maxWidth": 260,
+});
+
+        
+            
+                var html_4ea3a7940dc46f07dad38af4fd541d51 = $(`<div id="html_4ea3a7940dc46f07dad38af4fd541d51" style="width: 100.0%; height: 100.0%;">臺大四號館東北側<br>調度站設此 → with-info 平均 cost=8.38 分<br>Δ=3.24 分</div>`)[0];
+                popup_7e645305c03840ac4d543b5d220f5868.setContent(html_4ea3a7940dc46f07dad38af4fd541d51);
+            
+        
+
+        circle_marker_c7d6c5337db7e149445947e1f1e7bfa3.bindPopup(popup_7e645305c03840ac4d543b5d220f5868)
+        ;
+
+        
+    
+    
+            circle_marker_c7d6c5337db7e149445947e1f1e7bfa3.bindTooltip(
+                `<div>
+                     臺大四號館東北側: 8.38 分
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_80eca261b1e772c3ac270fb97289f6fc = L.circleMarker(
+                [25.02104, 121.54081],
+                {"bubblingMouseEvents": true, "color": "#333", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#cfeb85", "fillOpacity": 0.9, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 9, "stroke": true, "weight": 1}
+            ).addTo(map_dd800dc9dab6b5e3b489e13e1ccfd4f5);
+        
+    
+        var popup_a04b7bcc52306dc4959ac6202a898979 = L.popup({
+  "maxWidth": 260,
+});
+
+        
+            
+                var html_872e276bca75b1877b0318a2c707cf54 = $(`<div id="html_872e276bca75b1877b0318a2c707cf54" style="width: 100.0%; height: 100.0%;">臺大法人語言訓練中心前<br>調度站設此 → with-info 平均 cost=8.40 分<br>Δ=3.27 分</div>`)[0];
+                popup_a04b7bcc52306dc4959ac6202a898979.setContent(html_872e276bca75b1877b0318a2c707cf54);
+            
+        
+
+        circle_marker_80eca261b1e772c3ac270fb97289f6fc.bindPopup(popup_a04b7bcc52306dc4959ac6202a898979)
+        ;
+
+        
+    
+    
+            circle_marker_80eca261b1e772c3ac270fb97289f6fc.bindTooltip(
+                `<div>
+                     臺大法人語言訓練中心前: 8.40 分
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_4833a4058582e7b9ec9df98246980fe6 = L.circleMarker(
+                [25.02101, 121.54284],
+                {"bubblingMouseEvents": true, "color": "#333", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#d1ec86", "fillOpacity": 0.9, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 9, "stroke": true, "weight": 1}
+            ).addTo(map_dd800dc9dab6b5e3b489e13e1ccfd4f5);
+        
+    
+        var popup_9b1f6991fb88bd78456d5f8d634fc4e8 = L.popup({
+  "maxWidth": 260,
+});
+
+        
+            
+                var html_e6aa75a297125efd2a07714f229311f3 = $(`<div id="html_e6aa75a297125efd2a07714f229311f3" style="width: 100.0%; height: 100.0%;">臺大社科院圖書館前<br>調度站設此 → with-info 平均 cost=8.42 分<br>Δ=3.26 分</div>`)[0];
+                popup_9b1f6991fb88bd78456d5f8d634fc4e8.setContent(html_e6aa75a297125efd2a07714f229311f3);
+            
+        
+
+        circle_marker_4833a4058582e7b9ec9df98246980fe6.bindPopup(popup_9b1f6991fb88bd78456d5f8d634fc4e8)
+        ;
+
+        
+    
+    
+            circle_marker_4833a4058582e7b9ec9df98246980fe6.bindTooltip(
+                `<div>
+                     臺大社科院圖書館前: 8.42 分
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_beddec9624b5e347b9633779aa17ac6e = L.circleMarker(
+                [25.02074, 121.53906],
+                {"bubblingMouseEvents": true, "color": "#333", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#dff293", "fillOpacity": 0.9, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 9, "stroke": true, "weight": 1}
+            ).addTo(map_dd800dc9dab6b5e3b489e13e1ccfd4f5);
+        
+    
+        var popup_00f445eddec4a387f30e261e345f0462 = L.popup({
+  "maxWidth": 260,
+});
+
+        
+            
+                var html_7b8fefcbfd4fd16432fe59873064860f = $(`<div id="html_7b8fefcbfd4fd16432fe59873064860f" style="width: 100.0%; height: 100.0%;">臺大思亮館東南側<br>調度站設此 → with-info 平均 cost=8.50 分<br>Δ=3.00 分</div>`)[0];
+                popup_00f445eddec4a387f30e261e345f0462.setContent(html_7b8fefcbfd4fd16432fe59873064860f);
+            
+        
+
+        circle_marker_beddec9624b5e347b9633779aa17ac6e.bindPopup(popup_00f445eddec4a387f30e261e345f0462)
+        ;
+
+        
+    
+    
+            circle_marker_beddec9624b5e347b9633779aa17ac6e.bindTooltip(
+                `<div>
+                     臺大思亮館東南側: 8.50 分
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_2caa7a91e02d9308fd5c4218700f8667 = L.circleMarker(
+                [25.02032, 121.54497],
+                {"bubblingMouseEvents": true, "color": "#333", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#ebf7a3", "fillOpacity": 0.9, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 9, "stroke": true, "weight": 1}
+            ).addTo(map_dd800dc9dab6b5e3b489e13e1ccfd4f5);
+        
+    
+        var popup_e3fe34f98d87c46a5725d6fd60e5f5b1 = L.popup({
+  "maxWidth": 260,
+});
+
+        
+            
+                var html_ff950193a89b577745476df563c1829f = $(`<div id="html_ff950193a89b577745476df563c1829f" style="width: 100.0%; height: 100.0%;">臺大萬才館前<br>調度站設此 → with-info 平均 cost=8.58 分<br>Δ=3.09 分</div>`)[0];
+                popup_e3fe34f98d87c46a5725d6fd60e5f5b1.setContent(html_ff950193a89b577745476df563c1829f);
+            
+        
+
+        circle_marker_2caa7a91e02d9308fd5c4218700f8667.bindPopup(popup_e3fe34f98d87c46a5725d6fd60e5f5b1)
+        ;
+
+        
+    
+    
+            circle_marker_2caa7a91e02d9308fd5c4218700f8667.bindTooltip(
+                `<div>
+                     臺大萬才館前: 8.58 分
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_0099637d2312cf9f5b4eaa10daab735f = L.circleMarker(
+                [25.02076, 121.54432],
+                {"bubblingMouseEvents": true, "color": "#333", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#ecf7a6", "fillOpacity": 0.9, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 9, "stroke": true, "weight": 1}
+            ).addTo(map_dd800dc9dab6b5e3b489e13e1ccfd4f5);
+        
+    
+        var popup_b4525b33ca44ca1f559d79260934813f = L.popup({
+  "maxWidth": 260,
+});
+
+        
+            
+                var html_4972ae4d9a346ac383e294fb940a01ba = $(`<div id="html_4972ae4d9a346ac383e294fb940a01ba" style="width: 100.0%; height: 100.0%;">臺大國青大樓宿舍前<br>調度站設此 → with-info 平均 cost=8.60 分<br>Δ=3.08 分</div>`)[0];
+                popup_b4525b33ca44ca1f559d79260934813f.setContent(html_4972ae4d9a346ac383e294fb940a01ba);
+            
+        
+
+        circle_marker_0099637d2312cf9f5b4eaa10daab735f.bindPopup(popup_b4525b33ca44ca1f559d79260934813f)
+        ;
+
+        
+    
+    
+            circle_marker_0099637d2312cf9f5b4eaa10daab735f.bindTooltip(
+                `<div>
+                     臺大國青大樓宿舍前: 8.60 分
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_93eea9e7b3074c487cdfcb79dc03d4e3 = L.circleMarker(
+                [25.01595, 121.53791],
+                {"bubblingMouseEvents": true, "color": "#333", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#feffbe", "fillOpacity": 0.9, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 9, "stroke": true, "weight": 1}
+            ).addTo(map_dd800dc9dab6b5e3b489e13e1ccfd4f5);
+        
+    
+        var popup_da3dcee6420350e99a1afb8268b822c8 = L.popup({
+  "maxWidth": 260,
+});
+
+        
+            
+                var html_660da863d0f7c136e5ff6f320530c305 = $(`<div id="html_660da863d0f7c136e5ff6f320530c305" style="width: 100.0%; height: 100.0%;">臺大共同教室北側<br>調度站設此 → with-info 平均 cost=8.72 分<br>Δ=2.81 分</div>`)[0];
+                popup_da3dcee6420350e99a1afb8268b822c8.setContent(html_660da863d0f7c136e5ff6f320530c305);
+            
+        
+
+        circle_marker_93eea9e7b3074c487cdfcb79dc03d4e3.bindPopup(popup_da3dcee6420350e99a1afb8268b822c8)
+        ;
+
+        
+    
+    
+            circle_marker_93eea9e7b3074c487cdfcb79dc03d4e3.bindTooltip(
+                `<div>
+                     臺大共同教室北側: 8.72 分
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_8a24f5b087466231791b2db607466d19 = L.circleMarker(
+                [25.01666, 121.53718],
+                {"bubblingMouseEvents": true, "color": "#333", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#fff6b0", "fillOpacity": 0.9, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 9, "stroke": true, "weight": 1}
+            ).addTo(map_dd800dc9dab6b5e3b489e13e1ccfd4f5);
+        
+    
+        var popup_e892077c788b46eca3aeb29d8859b1fb = L.popup({
+  "maxWidth": 260,
+});
+
+        
+            
+                var html_f5fc2fb9f287a1e5d2fc42b1485c659b = $(`<div id="html_f5fc2fb9f287a1e5d2fc42b1485c659b" style="width: 100.0%; height: 100.0%;">臺大五號館西側<br>調度站設此 → with-info 平均 cost=8.80 分<br>Δ=2.88 分</div>`)[0];
+                popup_e892077c788b46eca3aeb29d8859b1fb.setContent(html_f5fc2fb9f287a1e5d2fc42b1485c659b);
+            
+        
+
+        circle_marker_8a24f5b087466231791b2db607466d19.bindPopup(popup_e892077c788b46eca3aeb29d8859b1fb)
+        ;
+
+        
+    
+    
+            circle_marker_8a24f5b087466231791b2db607466d19.bindTooltip(
+                `<div>
+                     臺大五號館西側: 8.80 分
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_4833490d5425473b3b1daf0413d26469 = L.circleMarker(
+                [25.01566, 121.53786],
+                {"bubblingMouseEvents": true, "color": "#333", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#fff2aa", "fillOpacity": 0.9, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 9, "stroke": true, "weight": 1}
+            ).addTo(map_dd800dc9dab6b5e3b489e13e1ccfd4f5);
+        
+    
+        var popup_3205fe975ea2a80f6da51378e1d8a024 = L.popup({
+  "maxWidth": 260,
+});
+
+        
+            
+                var html_a051124a571d808a780ba8a68601544b = $(`<div id="html_a051124a571d808a780ba8a68601544b" style="width: 100.0%; height: 100.0%;">臺大共同教室東南側<br>調度站設此 → with-info 平均 cost=8.84 分<br>Δ=2.40 分</div>`)[0];
+                popup_3205fe975ea2a80f6da51378e1d8a024.setContent(html_a051124a571d808a780ba8a68601544b);
+            
+        
+
+        circle_marker_4833490d5425473b3b1daf0413d26469.bindPopup(popup_3205fe975ea2a80f6da51378e1d8a024)
+        ;
+
+        
+    
+    
+            circle_marker_4833490d5425473b3b1daf0413d26469.bindTooltip(
+                `<div>
+                     臺大共同教室東南側: 8.84 分
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_1717a892f96b8b14efa78059f683f2b7 = L.circleMarker(
+                [25.01548, 121.53825],
+                {"bubblingMouseEvents": true, "color": "#333", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#fff1a8", "fillOpacity": 0.9, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 9, "stroke": true, "weight": 1}
+            ).addTo(map_dd800dc9dab6b5e3b489e13e1ccfd4f5);
+        
+    
+        var popup_b8746806f49942eabe5da6271f2923f3 = L.popup({
+  "maxWidth": 260,
+});
+
+        
+            
+                var html_e691fc9c0d25b196176321e8f7ee1140 = $(`<div id="html_e691fc9c0d25b196176321e8f7ee1140" style="width: 100.0%; height: 100.0%;">臺大生命科學館西北側<br>調度站設此 → with-info 平均 cost=8.84 分<br>Δ=2.83 分</div>`)[0];
+                popup_b8746806f49942eabe5da6271f2923f3.setContent(html_e691fc9c0d25b196176321e8f7ee1140);
+            
+        
+
+        circle_marker_1717a892f96b8b14efa78059f683f2b7.bindPopup(popup_b8746806f49942eabe5da6271f2923f3)
+        ;
+
+        
+    
+    
+            circle_marker_1717a892f96b8b14efa78059f683f2b7.bindTooltip(
+                `<div>
+                     臺大生命科學館西北側: 8.84 分
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_8add60fec193e04aa61a6213b7db9f3c = L.circleMarker(
+                [25.02108, 121.53783],
+                {"bubblingMouseEvents": true, "color": "#333", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#fee797", "fillOpacity": 0.9, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 9, "stroke": true, "weight": 1}
+            ).addTo(map_dd800dc9dab6b5e3b489e13e1ccfd4f5);
+        
+    
+        var popup_3cde344679b157d7806dd9b3ab4956f7 = L.popup({
+  "maxWidth": 260,
+});
+
+        
+            
+                var html_492a61ec9bc9a6b2301b0c0415196f38 = $(`<div id="html_492a61ec9bc9a6b2301b0c0415196f38" style="width: 100.0%; height: 100.0%;">臺大天文數學館南側<br>調度站設此 → with-info 平均 cost=8.93 分<br>Δ=2.75 分</div>`)[0];
+                popup_3cde344679b157d7806dd9b3ab4956f7.setContent(html_492a61ec9bc9a6b2301b0c0415196f38);
+            
+        
+
+        circle_marker_8add60fec193e04aa61a6213b7db9f3c.bindPopup(popup_3cde344679b157d7806dd9b3ab4956f7)
+        ;
+
+        
+    
+    
+            circle_marker_8add60fec193e04aa61a6213b7db9f3c.bindTooltip(
+                `<div>
+                     臺大天文數學館南側: 8.93 分
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_6aed524f65703d6bcd485e1a656fccb2 = L.circleMarker(
+                [25.01426, 121.54382],
+                {"bubblingMouseEvents": true, "color": "#333", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#fee28f", "fillOpacity": 0.9, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 9, "stroke": true, "weight": 1}
+            ).addTo(map_dd800dc9dab6b5e3b489e13e1ccfd4f5);
+        
+    
+        var popup_3b12531f55d772a1b82f8d40ac4b73f1 = L.popup({
+  "maxWidth": 260,
+});
+
+        
+            
+                var html_c8c7462dd7e24bca7346d8f16236048d = $(`<div id="html_c8c7462dd7e24bca7346d8f16236048d" style="width: 100.0%; height: 100.0%;">臺大醫學院附設癌醫中心<br>調度站設此 → with-info 平均 cost=8.97 分<br>Δ=2.70 分</div>`)[0];
+                popup_3b12531f55d772a1b82f8d40ac4b73f1.setContent(html_c8c7462dd7e24bca7346d8f16236048d);
+            
+        
+
+        circle_marker_6aed524f65703d6bcd485e1a656fccb2.bindPopup(popup_3b12531f55d772a1b82f8d40ac4b73f1)
+        ;
+
+        
+    
+    
+            circle_marker_6aed524f65703d6bcd485e1a656fccb2.bindTooltip(
+                `<div>
+                     臺大醫學院附設癌醫中心: 8.97 分
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_cbe8b365de8a2b9764ddc1701715b8b5 = L.circleMarker(
+                [25.01537, 121.54698],
+                {"bubblingMouseEvents": true, "color": "#333", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#fed27f", "fillOpacity": 0.9, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 9, "stroke": true, "weight": 1}
+            ).addTo(map_dd800dc9dab6b5e3b489e13e1ccfd4f5);
+        
+    
+        var popup_b01942b725f153eabc74dd8f3bcae7b0 = L.popup({
+  "maxWidth": 260,
+});
+
+        
+            
+                var html_d4b7353857a7629f3689a223873be70d = $(`<div id="html_d4b7353857a7629f3689a223873be70d" style="width: 100.0%; height: 100.0%;">臺大男七舍前<br>調度站設此 → with-info 平均 cost=9.06 分<br>Δ=2.53 分</div>`)[0];
+                popup_b01942b725f153eabc74dd8f3bcae7b0.setContent(html_d4b7353857a7629f3689a223873be70d);
+            
+        
+
+        circle_marker_cbe8b365de8a2b9764ddc1701715b8b5.bindPopup(popup_b01942b725f153eabc74dd8f3bcae7b0)
+        ;
+
+        
+    
+    
+            circle_marker_cbe8b365de8a2b9764ddc1701715b8b5.bindTooltip(
+                `<div>
+                     臺大男七舍前: 9.06 分
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_06e1e326a104cb009f629bf5f701c97b = L.circleMarker(
+                [25.01787, 121.5476],
+                {"bubblingMouseEvents": true, "color": "#333", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#fece7c", "fillOpacity": 0.9, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 9, "stroke": true, "weight": 1}
+            ).addTo(map_dd800dc9dab6b5e3b489e13e1ccfd4f5);
+        
+    
+        var popup_29475ec66d0593fbb97386828df9dc7e = L.popup({
+  "maxWidth": 260,
+});
+
+        
+            
+                var html_cd841ea0c2241747911e2dbcf9b9a86d = $(`<div id="html_cd841ea0c2241747911e2dbcf9b9a86d" style="width: 100.0%; height: 100.0%;">臺大土木研究大樓前<br>調度站設此 → with-info 平均 cost=9.09 分<br>Δ=2.58 分</div>`)[0];
+                popup_29475ec66d0593fbb97386828df9dc7e.setContent(html_cd841ea0c2241747911e2dbcf9b9a86d);
+            
+        
+
+        circle_marker_06e1e326a104cb009f629bf5f701c97b.bindPopup(popup_29475ec66d0593fbb97386828df9dc7e)
+        ;
+
+        
+    
+    
+            circle_marker_06e1e326a104cb009f629bf5f701c97b.bindTooltip(
+                `<div>
+                     臺大土木研究大樓前: 9.09 分
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_00d8c817e269b3bcb0f9998e9b75ecaf = L.circleMarker(
+                [25.01511, 121.53786],
+                {"bubblingMouseEvents": true, "color": "#333", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#feca79", "fillOpacity": 0.9, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 9, "stroke": true, "weight": 1}
+            ).addTo(map_dd800dc9dab6b5e3b489e13e1ccfd4f5);
+        
+    
+        var popup_4f7ee8beeb11299baf9792fe6082cacb = L.popup({
+  "maxWidth": 260,
+});
+
+        
+            
+                var html_2d41ebc39f1d7b1bccc4b666084fd6eb = $(`<div id="html_2d41ebc39f1d7b1bccc4b666084fd6eb" style="width: 100.0%; height: 100.0%;">臺大鹿鳴堂東側<br>調度站設此 → with-info 平均 cost=9.10 分<br>Δ=2.57 分</div>`)[0];
+                popup_4f7ee8beeb11299baf9792fe6082cacb.setContent(html_2d41ebc39f1d7b1bccc4b666084fd6eb);
+            
+        
+
+        circle_marker_00d8c817e269b3bcb0f9998e9b75ecaf.bindPopup(popup_4f7ee8beeb11299baf9792fe6082cacb)
+        ;
+
+        
+    
+    
+            circle_marker_00d8c817e269b3bcb0f9998e9b75ecaf.bindTooltip(
+                `<div>
+                     臺大鹿鳴堂東側: 9.10 分
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_676c8a18fdf9ebedae8f9eb89cd217fe = L.circleMarker(
+                [25.0189, 121.536],
+                {"bubblingMouseEvents": true, "color": "#333", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#fdbb6c", "fillOpacity": 0.9, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 9, "stroke": true, "weight": 1}
+            ).addTo(map_dd800dc9dab6b5e3b489e13e1ccfd4f5);
+        
+    
+        var popup_0346eb5fa6faa5d1f2aa3c30cfab2737 = L.popup({
+  "maxWidth": 260,
+});
+
+        
+            
+                var html_f56c0c8648d7c0d167ee50d36fb4c588 = $(`<div id="html_f56c0c8648d7c0d167ee50d36fb4c588" style="width: 100.0%; height: 100.0%;">臺大博雅館西側<br>調度站設此 → with-info 平均 cost=9.19 分<br>Δ=2.44 分</div>`)[0];
+                popup_0346eb5fa6faa5d1f2aa3c30cfab2737.setContent(html_f56c0c8648d7c0d167ee50d36fb4c588);
+            
+        
+
+        circle_marker_676c8a18fdf9ebedae8f9eb89cd217fe.bindPopup(popup_0346eb5fa6faa5d1f2aa3c30cfab2737)
+        ;
+
+        
+    
+    
+            circle_marker_676c8a18fdf9ebedae8f9eb89cd217fe.bindTooltip(
+                `<div>
+                     臺大博雅館西側: 9.19 分
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_43438fa8e5bfc71dab9083647beee284 = L.circleMarker(
+                [25.0198, 121.53583],
+                {"bubblingMouseEvents": true, "color": "#333", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#fdb768", "fillOpacity": 0.9, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 9, "stroke": true, "weight": 1}
+            ).addTo(map_dd800dc9dab6b5e3b489e13e1ccfd4f5);
+        
+    
+        var popup_23dde5b2b5dc0431cd98918929b5aa2c = L.popup({
+  "maxWidth": 260,
+});
+
+        
+            
+                var html_61f37bcf61c02115d279b67909cceac5 = $(`<div id="html_61f37bcf61c02115d279b67909cceac5" style="width: 100.0%; height: 100.0%;">臺大舊體育館西側<br>調度站設此 → with-info 平均 cost=9.21 分<br>Δ=2.45 分</div>`)[0];
+                popup_23dde5b2b5dc0431cd98918929b5aa2c.setContent(html_61f37bcf61c02115d279b67909cceac5);
+            
+        
+
+        circle_marker_43438fa8e5bfc71dab9083647beee284.bindPopup(popup_23dde5b2b5dc0431cd98918929b5aa2c)
+        ;
+
+        
+    
+    
+            circle_marker_43438fa8e5bfc71dab9083647beee284.bindTooltip(
+                `<div>
+                     臺大舊體育館西側: 9.21 分
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_18059ca989550076ab527f7370bea372 = L.circleMarker(
+                [25.01793, 121.53585],
+                {"bubblingMouseEvents": true, "color": "#333", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#fdb567", "fillOpacity": 0.9, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 9, "stroke": true, "weight": 1}
+            ).addTo(map_dd800dc9dab6b5e3b489e13e1ccfd4f5);
+        
+    
+        var popup_7eecbaae24c3fe88ea035bbba9221066 = L.popup({
+  "maxWidth": 260,
+});
+
+        
+            
+                var html_c72ef91e98147d8bc45ebb6e8dd49f22 = $(`<div id="html_c72ef91e98147d8bc45ebb6e8dd49f22" style="width: 100.0%; height: 100.0%;">臺大樂學館東側<br>調度站設此 → with-info 平均 cost=9.23 分<br>Δ=2.43 分</div>`)[0];
+                popup_7eecbaae24c3fe88ea035bbba9221066.setContent(html_c72ef91e98147d8bc45ebb6e8dd49f22);
+            
+        
+
+        circle_marker_18059ca989550076ab527f7370bea372.bindPopup(popup_7eecbaae24c3fe88ea035bbba9221066)
+        ;
+
+        
+    
+    
+            circle_marker_18059ca989550076ab527f7370bea372.bindTooltip(
+                `<div>
+                     臺大樂學館東側: 9.23 分
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_46a80364622179a381347f166bcf0220 = L.circleMarker(
+                [25.01467, 121.53765],
+                {"bubblingMouseEvents": true, "color": "#333", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#fdaf62", "fillOpacity": 0.9, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 9, "stroke": true, "weight": 1}
+            ).addTo(map_dd800dc9dab6b5e3b489e13e1ccfd4f5);
+        
+    
+        var popup_3e6ecb981beb9e02bd2104f03685867a = L.popup({
+  "maxWidth": 260,
+});
+
+        
+            
+                var html_01b206cdf8b09d1d57f55df324e87870 = $(`<div id="html_01b206cdf8b09d1d57f55df324e87870" style="width: 100.0%; height: 100.0%;">臺大禮賢樓西側<br>調度站設此 → with-info 平均 cost=9.26 分<br>Δ=2.36 分</div>`)[0];
+                popup_3e6ecb981beb9e02bd2104f03685867a.setContent(html_01b206cdf8b09d1d57f55df324e87870);
+            
+        
+
+        circle_marker_46a80364622179a381347f166bcf0220.bindPopup(popup_3e6ecb981beb9e02bd2104f03685867a)
+        ;
+
+        
+    
+    
+            circle_marker_46a80364622179a381347f166bcf0220.bindTooltip(
+                `<div>
+                     臺大禮賢樓西側: 9.26 分
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_82aeba449c1827f23266243ad04fef2a = L.circleMarker(
+                [25.01539, 121.53686],
+                {"bubblingMouseEvents": true, "color": "#333", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#fcaa5f", "fillOpacity": 0.9, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 9, "stroke": true, "weight": 1}
+            ).addTo(map_dd800dc9dab6b5e3b489e13e1ccfd4f5);
+        
+    
+        var popup_b2a9a35de82e58b939599b89fde28cb2 = L.popup({
+  "maxWidth": 260,
+});
+
+        
+            
+                var html_1782936474da2caca26da1cb21fed49a = $(`<div id="html_1782936474da2caca26da1cb21fed49a" style="width: 100.0%; height: 100.0%;">臺大小小福西南側<br>調度站設此 → with-info 平均 cost=9.28 分<br>Δ=2.40 分</div>`)[0];
+                popup_b2a9a35de82e58b939599b89fde28cb2.setContent(html_1782936474da2caca26da1cb21fed49a);
+            
+        
+
+        circle_marker_82aeba449c1827f23266243ad04fef2a.bindPopup(popup_b2a9a35de82e58b939599b89fde28cb2)
+        ;
+
+        
+    
+    
+            circle_marker_82aeba449c1827f23266243ad04fef2a.bindTooltip(
+                `<div>
+                     臺大小小福西南側: 9.28 分
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_f4bed75d989beeecd1983cf880621022 = L.circleMarker(
+                [25.01603, 121.53635],
+                {"bubblingMouseEvents": true, "color": "#333", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#fba35c", "fillOpacity": 0.9, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 9, "stroke": true, "weight": 1}
+            ).addTo(map_dd800dc9dab6b5e3b489e13e1ccfd4f5);
+        
+    
+        var popup_b5890099aea2b1fea3ee0e378d7e2714 = L.popup({
+  "maxWidth": 260,
+});
+
+        
+            
+                var html_6904ee9329af5e670001fe43e970877c = $(`<div id="html_6904ee9329af5e670001fe43e970877c" style="width: 100.0%; height: 100.0%;">臺大第二行政大樓南側<br>調度站設此 → with-info 平均 cost=9.30 分<br>Δ=2.35 分</div>`)[0];
+                popup_b5890099aea2b1fea3ee0e378d7e2714.setContent(html_6904ee9329af5e670001fe43e970877c);
+            
+        
+
+        circle_marker_f4bed75d989beeecd1983cf880621022.bindPopup(popup_b5890099aea2b1fea3ee0e378d7e2714)
+        ;
+
+        
+    
+    
+            circle_marker_f4bed75d989beeecd1983cf880621022.bindTooltip(
+                `<div>
+                     臺大第二行政大樓南側: 9.30 分
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_33b7efd085a16e2f9311a270162287cf = L.circleMarker(
+                [25.01436, 121.53828],
+                {"bubblingMouseEvents": true, "color": "#333", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#fba35c", "fillOpacity": 0.9, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 9, "stroke": true, "weight": 1}
+            ).addTo(map_dd800dc9dab6b5e3b489e13e1ccfd4f5);
+        
+    
+        var popup_9b7d2740856773d3c75fba91bd7eae5f = L.popup({
+  "maxWidth": 260,
+});
+
+        
+            
+                var html_9296fec8cfd52424f07380e1ee2af974 = $(`<div id="html_9296fec8cfd52424f07380e1ee2af974" style="width: 100.0%; height: 100.0%;">臺大管理學院一館<br>調度站設此 → with-info 平均 cost=9.31 分<br>Δ=2.36 分</div>`)[0];
+                popup_9b7d2740856773d3c75fba91bd7eae5f.setContent(html_9296fec8cfd52424f07380e1ee2af974);
+            
+        
+
+        circle_marker_33b7efd085a16e2f9311a270162287cf.bindPopup(popup_9b7d2740856773d3c75fba91bd7eae5f)
+        ;
+
+        
+    
+    
+            circle_marker_33b7efd085a16e2f9311a270162287cf.bindTooltip(
+                `<div>
+                     臺大管理學院一館: 9.31 分
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_d137644a78d60c11a75ebc074b9a76da = L.circleMarker(
+                [25.01415, 121.53767],
+                {"bubblingMouseEvents": true, "color": "#333", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#fa9656", "fillOpacity": 0.9, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 9, "stroke": true, "weight": 1}
+            ).addTo(map_dd800dc9dab6b5e3b489e13e1ccfd4f5);
+        
+    
+        var popup_d10c7eee0e9648296a5a6f88112aad40 = L.popup({
+  "maxWidth": 260,
+});
+
+        
+            
+                var html_49bc7199441793820a09e2fcf5ee710f = $(`<div id="html_49bc7199441793820a09e2fcf5ee710f" style="width: 100.0%; height: 100.0%;">臺大禮賢樓東南側<br>調度站設此 → with-info 平均 cost=9.36 分<br>Δ=2.22 分</div>`)[0];
+                popup_d10c7eee0e9648296a5a6f88112aad40.setContent(html_49bc7199441793820a09e2fcf5ee710f);
+            
+        
+
+        circle_marker_d137644a78d60c11a75ebc074b9a76da.bindPopup(popup_d10c7eee0e9648296a5a6f88112aad40)
+        ;
+
+        
+    
+    
+            circle_marker_d137644a78d60c11a75ebc074b9a76da.bindTooltip(
+                `<div>
+                     臺大禮賢樓東南側: 9.36 分
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_057abc89ef62a99c1982c28e9fa07590 = L.circleMarker(
+                [25.01699, 121.53574],
+                {"bubblingMouseEvents": true, "color": "#333", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#f99153", "fillOpacity": 0.9, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 9, "stroke": true, "weight": 1}
+            ).addTo(map_dd800dc9dab6b5e3b489e13e1ccfd4f5);
+        
+    
+        var popup_4c706e807b721fa7de802ebf492dccde = L.popup({
+  "maxWidth": 260,
+});
+
+        
+            
+                var html_89b0b6fcef56e6d1b23f7a56d37bba1c = $(`<div id="html_89b0b6fcef56e6d1b23f7a56d37bba1c" style="width: 100.0%; height: 100.0%;">臺大二號館<br>調度站設此 → with-info 平均 cost=9.38 分<br>Δ=2.15 分</div>`)[0];
+                popup_4c706e807b721fa7de802ebf492dccde.setContent(html_89b0b6fcef56e6d1b23f7a56d37bba1c);
+            
+        
+
+        circle_marker_057abc89ef62a99c1982c28e9fa07590.bindPopup(popup_4c706e807b721fa7de802ebf492dccde)
+        ;
+
+        
+    
+    
+            circle_marker_057abc89ef62a99c1982c28e9fa07590.bindTooltip(
+                `<div>
+                     臺大二號館: 9.38 分
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_c6a561a2c0514003d26336d6940ed27b = L.circleMarker(
+                [25.02112, 121.53591],
+                {"bubblingMouseEvents": true, "color": "#333", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#f8864f", "fillOpacity": 0.9, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 9, "stroke": true, "weight": 1}
+            ).addTo(map_dd800dc9dab6b5e3b489e13e1ccfd4f5);
+        
+    
+        var popup_900a44457650cfb4684c8db40ab4ac60 = L.popup({
+  "maxWidth": 260,
+});
+
+        
+            
+                var html_74af5a0e6b62e9155b9506d322506cd9 = $(`<div id="html_74af5a0e6b62e9155b9506d322506cd9" style="width: 100.0%; height: 100.0%;">臺大新體育館東南側<br>調度站設此 → with-info 平均 cost=9.42 分<br>Δ=2.25 分</div>`)[0];
+                popup_900a44457650cfb4684c8db40ab4ac60.setContent(html_74af5a0e6b62e9155b9506d322506cd9);
+            
+        
+
+        circle_marker_c6a561a2c0514003d26336d6940ed27b.bindPopup(popup_900a44457650cfb4684c8db40ab4ac60)
+        ;
+
+        
+    
+    
+            circle_marker_c6a561a2c0514003d26336d6940ed27b.bindTooltip(
+                `<div>
+                     臺大新體育館東南側: 9.42 分
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_7b70aa770db2818f6310c5e6836f8043 = L.circleMarker(
+                [25.0136, 121.54656],
+                {"bubblingMouseEvents": true, "color": "#333", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#f8864f", "fillOpacity": 0.9, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 9, "stroke": true, "weight": 1}
+            ).addTo(map_dd800dc9dab6b5e3b489e13e1ccfd4f5);
+        
+    
+        var popup_e074193be5f27c3bfca8cf1248fdb130 = L.popup({
+  "maxWidth": 260,
+});
+
+        
+            
+                var html_45364ad7fb6f702bff120b19cd694358 = $(`<div id="html_45364ad7fb6f702bff120b19cd694358" style="width: 100.0%; height: 100.0%;">臺大永齡生醫工程館<br>調度站設此 → with-info 平均 cost=9.42 分<br>Δ=1.92 分</div>`)[0];
+                popup_e074193be5f27c3bfca8cf1248fdb130.setContent(html_45364ad7fb6f702bff120b19cd694358);
+            
+        
+
+        circle_marker_7b70aa770db2818f6310c5e6836f8043.bindPopup(popup_e074193be5f27c3bfca8cf1248fdb130)
+        ;
+
+        
+    
+    
+            circle_marker_7b70aa770db2818f6310c5e6836f8043.bindTooltip(
+                `<div>
+                     臺大永齡生醫工程館: 9.42 分
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_cb7daa779854409375cd2d6a2e42aa79 = L.circleMarker(
+                [25.01561, 121.53583],
+                {"bubblingMouseEvents": true, "color": "#333", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#f67f4b", "fillOpacity": 0.9, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 9, "stroke": true, "weight": 1}
+            ).addTo(map_dd800dc9dab6b5e3b489e13e1ccfd4f5);
+        
+    
+        var popup_04de3b1c5d612862903fd8def1b2d9de = L.popup({
+  "maxWidth": 260,
+});
+
+        
+            
+                var html_0eaa1550450b8b469b63a71870d1cd5e = $(`<div id="html_0eaa1550450b8b469b63a71870d1cd5e" style="width: 100.0%; height: 100.0%;">臺大椰林小舖<br>調度站設此 → with-info 平均 cost=9.46 分<br>Δ=2.15 分</div>`)[0];
+                popup_04de3b1c5d612862903fd8def1b2d9de.setContent(html_0eaa1550450b8b469b63a71870d1cd5e);
+            
+        
+
+        circle_marker_cb7daa779854409375cd2d6a2e42aa79.bindPopup(popup_04de3b1c5d612862903fd8def1b2d9de)
+        ;
+
+        
+    
+    
+            circle_marker_cb7daa779854409375cd2d6a2e42aa79.bindTooltip(
+                `<div>
+                     臺大椰林小舖: 9.46 分
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_f3b0d1a4d9b5464344b554280f986048 = L.circleMarker(
+                [25.02157, 121.53633],
+                {"bubblingMouseEvents": true, "color": "#333", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#f57748", "fillOpacity": 0.9, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 9, "stroke": true, "weight": 1}
+            ).addTo(map_dd800dc9dab6b5e3b489e13e1ccfd4f5);
+        
+    
+        var popup_5e65ad5af948e809083e9a71304377e0 = L.popup({
+  "maxWidth": 260,
+});
+
+        
+            
+                var html_3391af7baaad6bd968a36e88bf12b6a1 = $(`<div id="html_3391af7baaad6bd968a36e88bf12b6a1" style="width: 100.0%; height: 100.0%;">臺大凝態館南側<br>調度站設此 → with-info 平均 cost=9.49 分<br>Δ=2.00 分</div>`)[0];
+                popup_5e65ad5af948e809083e9a71304377e0.setContent(html_3391af7baaad6bd968a36e88bf12b6a1);
+            
+        
+
+        circle_marker_f3b0d1a4d9b5464344b554280f986048.bindPopup(popup_5e65ad5af948e809083e9a71304377e0)
+        ;
+
+        
+    
+    
+            circle_marker_f3b0d1a4d9b5464344b554280f986048.bindTooltip(
+                `<div>
+                     臺大凝態館南側: 9.49 分
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_43297e9d1789f87ada3b01275061a294 = L.circleMarker(
+                [25.01627, 121.53535],
+                {"bubblingMouseEvents": true, "color": "#333", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#f47044", "fillOpacity": 0.9, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 9, "stroke": true, "weight": 1}
+            ).addTo(map_dd800dc9dab6b5e3b489e13e1ccfd4f5);
+        
+    
+        var popup_67289fc4a9c54567fa90911fc9823ccd = L.popup({
+  "maxWidth": 260,
+});
+
+        
+            
+                var html_2067f8ff428d1d184e906fa5559b332e = $(`<div id="html_2067f8ff428d1d184e906fa5559b332e" style="width: 100.0%; height: 100.0%;">臺大農化新館西側<br>調度站設此 → with-info 平均 cost=9.52 分<br>Δ=2.16 分</div>`)[0];
+                popup_67289fc4a9c54567fa90911fc9823ccd.setContent(html_2067f8ff428d1d184e906fa5559b332e);
+            
+        
+
+        circle_marker_43297e9d1789f87ada3b01275061a294.bindPopup(popup_67289fc4a9c54567fa90911fc9823ccd)
+        ;
+
+        
+    
+    
+            circle_marker_43297e9d1789f87ada3b01275061a294.bindTooltip(
+                `<div>
+                     臺大農化新館西側: 9.52 分
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_bc6dfa18a51e0f765bbc5a1073dac9c2 = L.circleMarker(
+                [25.01345, 121.53798],
+                {"bubblingMouseEvents": true, "color": "#333", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#f46d43", "fillOpacity": 0.9, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 9, "stroke": true, "weight": 1}
+            ).addTo(map_dd800dc9dab6b5e3b489e13e1ccfd4f5);
+        
+    
+        var popup_c221fc3f77c49fa7ae2d24fb7dbc64a3 = L.popup({
+  "maxWidth": 260,
+});
+
+        
+            
+                var html_3973c6563b6190def83efb7c29b3493f = $(`<div id="html_3973c6563b6190def83efb7c29b3493f" style="width: 100.0%; height: 100.0%;">臺大公館停車場西北側<br>調度站設此 → with-info 平均 cost=9.53 分<br>Δ=2.14 分</div>`)[0];
+                popup_c221fc3f77c49fa7ae2d24fb7dbc64a3.setContent(html_3973c6563b6190def83efb7c29b3493f);
+            
+        
+
+        circle_marker_bc6dfa18a51e0f765bbc5a1073dac9c2.bindPopup(popup_c221fc3f77c49fa7ae2d24fb7dbc64a3)
+        ;
+
+        
+    
+    
+            circle_marker_bc6dfa18a51e0f765bbc5a1073dac9c2.bindTooltip(
+                `<div>
+                     臺大公館停車場西北側: 9.53 分
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_8a1a6ceb07159001aecde17ebb98b1b6 = L.circleMarker(
+                [25.01234, 121.54503],
+                {"bubblingMouseEvents": true, "color": "#333", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#ea5739", "fillOpacity": 0.9, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 9, "stroke": true, "weight": 1}
+            ).addTo(map_dd800dc9dab6b5e3b489e13e1ccfd4f5);
+        
+    
+        var popup_20ed179fbce859391082853757b9cd3a = L.popup({
+  "maxWidth": 260,
+});
+
+        
+            
+                var html_a3f21a5a960911fd9fd353d8b35aef07 = $(`<div id="html_a3f21a5a960911fd9fd353d8b35aef07" style="width: 100.0%; height: 100.0%;">臺大環研大樓<br>調度站設此 → with-info 平均 cost=9.62 分<br>Δ=2.05 分</div>`)[0];
+                popup_20ed179fbce859391082853757b9cd3a.setContent(html_a3f21a5a960911fd9fd353d8b35aef07);
+            
+        
+
+        circle_marker_8a1a6ceb07159001aecde17ebb98b1b6.bindPopup(popup_20ed179fbce859391082853757b9cd3a)
+        ;
+
+        
+    
+    
+            circle_marker_8a1a6ceb07159001aecde17ebb98b1b6.bindTooltip(
+                `<div>
+                     臺大環研大樓: 9.62 分
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_a2dcd4539c21be9d8762f14109b366a7 = L.circleMarker(
+                [25.01337, 121.53909],
+                {"bubblingMouseEvents": true, "color": "#333", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#ea5739", "fillOpacity": 0.9, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 9, "stroke": true, "weight": 1}
+            ).addTo(map_dd800dc9dab6b5e3b489e13e1ccfd4f5);
+        
+    
+        var popup_4a4723738b9ed55ced7efdc82f100493 = L.popup({
+  "maxWidth": 260,
+});
+
+        
+            
+                var html_940879bfd16278c8e0d8a19cd36fce76 = $(`<div id="html_940879bfd16278c8e0d8a19cd36fce76" style="width: 100.0%; height: 100.0%;">臺大教研館北側<br>調度站設此 → with-info 平均 cost=9.63 分<br>Δ=2.04 分</div>`)[0];
+                popup_4a4723738b9ed55ced7efdc82f100493.setContent(html_940879bfd16278c8e0d8a19cd36fce76);
+            
+        
+
+        circle_marker_a2dcd4539c21be9d8762f14109b366a7.bindPopup(popup_4a4723738b9ed55ced7efdc82f100493)
+        ;
+
+        
+    
+    
+            circle_marker_a2dcd4539c21be9d8762f14109b366a7.bindTooltip(
+                `<div>
+                     臺大教研館北側: 9.63 分
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_0ccd77dd0275e8725f99cfc56807de7e = L.circleMarker(
+                [25.01355, 121.53673],
+                {"bubblingMouseEvents": true, "color": "#333", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#e54e35", "fillOpacity": 0.9, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 9, "stroke": true, "weight": 1}
+            ).addTo(map_dd800dc9dab6b5e3b489e13e1ccfd4f5);
+        
+    
+        var popup_d0b20cf32da805283ee6123f6d274adf = L.popup({
+  "maxWidth": 260,
+});
+
+        
+            
+                var html_d6cb5c6f5de57d551c67321491726f2b = $(`<div id="html_d6cb5c6f5de57d551c67321491726f2b" style="width: 100.0%; height: 100.0%;">臺大管理學院二館北側<br>調度站設此 → with-info 平均 cost=9.67 分<br>Δ=2.01 分</div>`)[0];
+                popup_d0b20cf32da805283ee6123f6d274adf.setContent(html_d6cb5c6f5de57d551c67321491726f2b);
+            
+        
+
+        circle_marker_0ccd77dd0275e8725f99cfc56807de7e.bindPopup(popup_d0b20cf32da805283ee6123f6d274adf)
+        ;
+
+        
+    
+    
+            circle_marker_0ccd77dd0275e8725f99cfc56807de7e.bindTooltip(
+                `<div>
+                     臺大管理學院二館北側: 9.67 分
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_3e7b7ee2836fda629959283809098439 = L.circleMarker(
+                [25.0182, 121.53476],
+                {"bubblingMouseEvents": true, "color": "#333", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#e54e35", "fillOpacity": 0.9, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 9, "stroke": true, "weight": 1}
+            ).addTo(map_dd800dc9dab6b5e3b489e13e1ccfd4f5);
+        
+    
+        var popup_823a7f9a6b47d7225e88babb39af922f = L.popup({
+  "maxWidth": 260,
+});
+
+        
+            
+                var html_c0016aaf4d4d049a35445b848da1686e = $(`<div id="html_c0016aaf4d4d049a35445b848da1686e" style="width: 100.0%; height: 100.0%;">臺大人文館<br>調度站設此 → with-info 平均 cost=9.67 分<br>Δ=2.01 分</div>`)[0];
+                popup_823a7f9a6b47d7225e88babb39af922f.setContent(html_c0016aaf4d4d049a35445b848da1686e);
+            
+        
+
+        circle_marker_3e7b7ee2836fda629959283809098439.bindPopup(popup_823a7f9a6b47d7225e88babb39af922f)
+        ;
+
+        
+    
+    
+            circle_marker_3e7b7ee2836fda629959283809098439.bindTooltip(
+                `<div>
+                     臺大人文館: 9.67 分
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_09dcd3eb0180b467f67da22130f79615 = L.circleMarker(
+                [25.0222, 121.53626],
+                {"bubblingMouseEvents": true, "color": "#333", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#dd3d2d", "fillOpacity": 0.9, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 9, "stroke": true, "weight": 1}
+            ).addTo(map_dd800dc9dab6b5e3b489e13e1ccfd4f5);
+        
+    
+        var popup_2df09fd30e76525e3a6f32992134c1d3 = L.popup({
+  "maxWidth": 260,
+});
+
+        
+            
+                var html_e1071407a9c886430de6e974302754cc = $(`<div id="html_e1071407a9c886430de6e974302754cc" style="width: 100.0%; height: 100.0%;">臺大綜合體育館停車場前<br>調度站設此 → with-info 平均 cost=9.74 分<br>Δ=1.88 分</div>`)[0];
+                popup_2df09fd30e76525e3a6f32992134c1d3.setContent(html_e1071407a9c886430de6e974302754cc);
+            
+        
+
+        circle_marker_09dcd3eb0180b467f67da22130f79615.bindPopup(popup_2df09fd30e76525e3a6f32992134c1d3)
+        ;
+
+        
+    
+    
+            circle_marker_09dcd3eb0180b467f67da22130f79615.bindTooltip(
+                `<div>
+                     臺大綜合體育館停車場前: 9.74 分
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_c5febffba558fd7d33f04ace3d237350 = L.circleMarker(
+                [25.01698, 121.53455],
+                {"bubblingMouseEvents": true, "color": "#333", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#dc3b2c", "fillOpacity": 0.9, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 9, "stroke": true, "weight": 1}
+            ).addTo(map_dd800dc9dab6b5e3b489e13e1ccfd4f5);
+        
+    
+        var popup_977beb56506be71879f00f83ee8830c1 = L.popup({
+  "maxWidth": 260,
+});
+
+        
+            
+                var html_15d264c5b8f9c1988c16111cd7911d74 = $(`<div id="html_15d264c5b8f9c1988c16111cd7911d74" style="width: 100.0%; height: 100.0%;">臺大一號館<br>調度站設此 → with-info 平均 cost=9.75 分<br>Δ=1.92 分</div>`)[0];
+                popup_977beb56506be71879f00f83ee8830c1.setContent(html_15d264c5b8f9c1988c16111cd7911d74);
+            
+        
+
+        circle_marker_c5febffba558fd7d33f04ace3d237350.bindPopup(popup_977beb56506be71879f00f83ee8830c1)
+        ;
+
+        
+    
+    
+            circle_marker_c5febffba558fd7d33f04ace3d237350.bindTooltip(
+                `<div>
+                     臺大一號館: 9.75 分
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_547d7d41de01e8fdcaabc1a4c1058372 = L.circleMarker(
+                [25.01479, 121.53494],
+                {"bubblingMouseEvents": true, "color": "#333", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#d93429", "fillOpacity": 0.9, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 9, "stroke": true, "weight": 1}
+            ).addTo(map_dd800dc9dab6b5e3b489e13e1ccfd4f5);
+        
+    
+        var popup_96dbb3cddc45e866fe68453ef7b28f47 = L.popup({
+  "maxWidth": 260,
+});
+
+        
+            
+                var html_90fb399a1d0255d7f987a1ca8d4e4e7a = $(`<div id="html_90fb399a1d0255d7f987a1ca8d4e4e7a" style="width: 100.0%; height: 100.0%;">臺大大一女餐廳廣場<br>調度站設此 → with-info 平均 cost=9.78 分<br>Δ=1.89 分</div>`)[0];
+                popup_96dbb3cddc45e866fe68453ef7b28f47.setContent(html_90fb399a1d0255d7f987a1ca8d4e4e7a);
+            
+        
+
+        circle_marker_547d7d41de01e8fdcaabc1a4c1058372.bindPopup(popup_96dbb3cddc45e866fe68453ef7b28f47)
+        ;
+
+        
+    
+    
+            circle_marker_547d7d41de01e8fdcaabc1a4c1058372.bindTooltip(
+                `<div>
+                     臺大大一女餐廳廣場: 9.78 分
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_d141502c6ed3594714e228b98023f2ef = L.circleMarker(
+                [25.01547, 121.53436],
+                {"bubblingMouseEvents": true, "color": "#333", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#d83128", "fillOpacity": 0.9, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 9, "stroke": true, "weight": 1}
+            ).addTo(map_dd800dc9dab6b5e3b489e13e1ccfd4f5);
+        
+    
+        var popup_5142d16545262da14b76d73614d4430b = L.popup({
+  "maxWidth": 260,
+});
+
+        
+            
+                var html_399bbfc81997f24dc28fe8d9641dc6cc = $(`<div id="html_399bbfc81997f24dc28fe8d9641dc6cc" style="width: 100.0%; height: 100.0%;">臺大大一女舍北側<br>調度站設此 → with-info 平均 cost=9.79 分<br>Δ=1.88 分</div>`)[0];
+                popup_5142d16545262da14b76d73614d4430b.setContent(html_399bbfc81997f24dc28fe8d9641dc6cc);
+            
+        
+
+        circle_marker_d141502c6ed3594714e228b98023f2ef.bindPopup(popup_5142d16545262da14b76d73614d4430b)
+        ;
+
+        
+    
+    
+            circle_marker_d141502c6ed3594714e228b98023f2ef.bindTooltip(
+                `<div>
+                     臺大大一女舍北側: 9.79 分
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_f0002e095e859dc27da4329e831a57fe = L.circleMarker(
+                [25.01839, 121.53404],
+                {"bubblingMouseEvents": true, "color": "#333", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#ce2827", "fillOpacity": 0.9, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 9, "stroke": true, "weight": 1}
+            ).addTo(map_dd800dc9dab6b5e3b489e13e1ccfd4f5);
+        
+    
+        var popup_ace539c015a86c322a809772773b7b96 = L.popup({
+  "maxWidth": 260,
+});
+
+        
+            
+                var html_48cd0dc6eadc6b732fbc12b69a863fe1 = $(`<div id="html_48cd0dc6eadc6b732fbc12b69a863fe1" style="width: 100.0%; height: 100.0%;">臺大農業陳列館北側<br>調度站設此 → with-info 平均 cost=9.84 分<br>Δ=1.83 分</div>`)[0];
+                popup_ace539c015a86c322a809772773b7b96.setContent(html_48cd0dc6eadc6b732fbc12b69a863fe1);
+            
+        
+
+        circle_marker_f0002e095e859dc27da4329e831a57fe.bindPopup(popup_ace539c015a86c322a809772773b7b96)
+        ;
+
+        
+    
+    
+            circle_marker_f0002e095e859dc27da4329e831a57fe.bindTooltip(
+                `<div>
+                     臺大農業陳列館北側: 9.84 分
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_e2d9dbacf10c382154e25dc75e2cf428 = L.circleMarker(
+                [25.01491, 121.53438],
+                {"bubblingMouseEvents": true, "color": "#333", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#ca2427", "fillOpacity": 0.9, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 9, "stroke": true, "weight": 1}
+            ).addTo(map_dd800dc9dab6b5e3b489e13e1ccfd4f5);
+        
+    
+        var popup_52128e870e2051ab2544baed3a3f516e = L.popup({
+  "maxWidth": 260,
+});
+
+        
+            
+                var html_69d066b4f15661a819149c6da4a82c54 = $(`<div id="html_69d066b4f15661a819149c6da4a82c54" style="width: 100.0%; height: 100.0%;">捷運公館站(2號出口)<br>調度站設此 → with-info 平均 cost=9.87 分<br>Δ=1.80 分</div>`)[0];
+                popup_52128e870e2051ab2544baed3a3f516e.setContent(html_69d066b4f15661a819149c6da4a82c54);
+            
+        
+
+        circle_marker_e2d9dbacf10c382154e25dc75e2cf428.bindPopup(popup_52128e870e2051ab2544baed3a3f516e)
+        ;
+
+        
+    
+    
+            circle_marker_e2d9dbacf10c382154e25dc75e2cf428.bindTooltip(
+                `<div>
+                     捷運公館站(2號出口): 9.87 分
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_6e54b8c7d1282ddea37544fa80114144 = L.circleMarker(
+                [25.01551, 121.53374],
+                {"bubblingMouseEvents": true, "color": "#333", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#c21c27", "fillOpacity": 0.9, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 9, "stroke": true, "weight": 1}
+            ).addTo(map_dd800dc9dab6b5e3b489e13e1ccfd4f5);
+        
+    
+        var popup_f7929dbfb4d87753651a13563a6818cf = L.popup({
+  "maxWidth": 260,
+});
+
+        
+            
+                var html_e19f240502fa318725079106474245fb = $(`<div id="html_e19f240502fa318725079106474245fb" style="width: 100.0%; height: 100.0%;">捷運公館站(3號出口)<br>調度站設此 → with-info 平均 cost=9.91 分<br>Δ=1.76 分</div>`)[0];
+                popup_f7929dbfb4d87753651a13563a6818cf.setContent(html_e19f240502fa318725079106474245fb);
+            
+        
+
+        circle_marker_6e54b8c7d1282ddea37544fa80114144.bindPopup(popup_f7929dbfb4d87753651a13563a6818cf)
+        ;
+
+        
+    
+    
+            circle_marker_6e54b8c7d1282ddea37544fa80114144.bindTooltip(
+                `<div>
+                     捷運公館站(3號出口): 9.91 分
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_cdfc7078cafaea5432eaefa99610df99 = L.circleMarker(
+                [25.01453, 121.53437],
+                {"bubblingMouseEvents": true, "color": "#333", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#c01a27", "fillOpacity": 0.9, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 9, "stroke": true, "weight": 1}
+            ).addTo(map_dd800dc9dab6b5e3b489e13e1ccfd4f5);
+        
+    
+        var popup_e296618661945b70f9fe5f418c87ddad = L.popup({
+  "maxWidth": 260,
+});
+
+        
+            
+                var html_a4eecb560a6975d51c2a5fd6bdbb48fa = $(`<div id="html_a4eecb560a6975d51c2a5fd6bdbb48fa" style="width: 100.0%; height: 100.0%;">捷運公館站(1號出口)<br>調度站設此 → with-info 平均 cost=9.91 分<br>Δ=1.76 分</div>`)[0];
+                popup_e296618661945b70f9fe5f418c87ddad.setContent(html_a4eecb560a6975d51c2a5fd6bdbb48fa);
+            
+        
+
+        circle_marker_cdfc7078cafaea5432eaefa99610df99.bindPopup(popup_e296618661945b70f9fe5f418c87ddad)
+        ;
+
+        
+    
+    
+            circle_marker_cdfc7078cafaea5432eaefa99610df99.bindTooltip(
+                `<div>
+                     捷運公館站(1號出口): 9.91 分
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_1b75bb56230cd9f87dddf43fcdfad603 = L.circleMarker(
+                [25.01507, 121.53383],
+                {"bubblingMouseEvents": true, "color": "#333", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#be1827", "fillOpacity": 0.9, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 9, "stroke": true, "weight": 1}
+            ).addTo(map_dd800dc9dab6b5e3b489e13e1ccfd4f5);
+        
+    
+        var popup_24292a27c3696f43cac6341bc78568ee = L.popup({
+  "maxWidth": 260,
+});
+
+        
+            
+                var html_b73caf2ee780354f6b84c505e5ac9cfb = $(`<div id="html_b73caf2ee780354f6b84c505e5ac9cfb" style="width: 100.0%; height: 100.0%;">捷運公館站(4號出口)<br>調度站設此 → with-info 平均 cost=9.93 分<br>Δ=1.74 分</div>`)[0];
+                popup_24292a27c3696f43cac6341bc78568ee.setContent(html_b73caf2ee780354f6b84c505e5ac9cfb);
+            
+        
+
+        circle_marker_1b75bb56230cd9f87dddf43fcdfad603.bindPopup(popup_24292a27c3696f43cac6341bc78568ee)
+        ;
+
+        
+    
+    
+            circle_marker_1b75bb56230cd9f87dddf43fcdfad603.bindTooltip(
+                `<div>
+                     捷運公館站(4號出口): 9.93 分
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_989c5e4a41600bd0b09500af17dd873c = L.circleMarker(
+                [25.01525, 121.53009],
+                {"bubblingMouseEvents": true, "color": "#333", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#a70226", "fillOpacity": 0.9, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 9, "stroke": true, "weight": 1}
+            ).addTo(map_dd800dc9dab6b5e3b489e13e1ccfd4f5);
+        
+    
+        var popup_41ff304782af0d444be6348338fcde00 = L.popup({
+  "maxWidth": 260,
+});
+
+        
+            
+                var html_c7faf7946352cb0f388d5b1a1e788ae4 = $(`<div id="html_c7faf7946352cb0f388d5b1a1e788ae4" style="width: 100.0%; height: 100.0%;">臺大水源舍區B棟<br>調度站設此 → with-info 平均 cost=10.06 分<br>Δ=1.61 分</div>`)[0];
+                popup_41ff304782af0d444be6348338fcde00.setContent(html_c7faf7946352cb0f388d5b1a1e788ae4);
+            
+        
+
+        circle_marker_989c5e4a41600bd0b09500af17dd873c.bindPopup(popup_41ff304782af0d444be6348338fcde00)
+        ;
+
+        
+    
+    
+            circle_marker_989c5e4a41600bd0b09500af17dd873c.bindTooltip(
+                `<div>
+                     臺大水源舍區B棟: 10.06 分
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_07a4bd4b39edb19989cdcdd72132ce50 = L.circleMarker(
+                [25.01493, 121.53044],
+                {"bubblingMouseEvents": true, "color": "#333", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#a70226", "fillOpacity": 0.9, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 9, "stroke": true, "weight": 1}
+            ).addTo(map_dd800dc9dab6b5e3b489e13e1ccfd4f5);
+        
+    
+        var popup_f6debbf2db4749f6cecebdc9e59ea5a4 = L.popup({
+  "maxWidth": 260,
+});
+
+        
+            
+                var html_edfbe2c3e6754033dafa7ff8ee076662 = $(`<div id="html_edfbe2c3e6754033dafa7ff8ee076662" style="width: 100.0%; height: 100.0%;">臺大水源舍區A棟<br>調度站設此 → with-info 平均 cost=10.06 分<br>Δ=1.58 分</div>`)[0];
+                popup_f6debbf2db4749f6cecebdc9e59ea5a4.setContent(html_edfbe2c3e6754033dafa7ff8ee076662);
+            
+        
+
+        circle_marker_07a4bd4b39edb19989cdcdd72132ce50.bindPopup(popup_f6debbf2db4749f6cecebdc9e59ea5a4)
+        ;
+
+        
+    
+    
+            circle_marker_07a4bd4b39edb19989cdcdd72132ce50.bindTooltip(
+                `<div>
+                     臺大水源舍區A棟: 10.06 分
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_3f696b053e9118c9634134b7b699c4b2 = L.circleMarker(
+                [25.01466, 121.52917],
+                {"bubblingMouseEvents": true, "color": "#333", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#a50026", "fillOpacity": 0.9, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 9, "stroke": true, "weight": 1}
+            ).addTo(map_dd800dc9dab6b5e3b489e13e1ccfd4f5);
+        
+    
+        var popup_047023d80e5d19049496f071d1342ccb = L.popup({
+  "maxWidth": 260,
+});
+
+        
+            
+                var html_410f34b3ab99366c5ad82f7f90b1205f = $(`<div id="html_410f34b3ab99366c5ad82f7f90b1205f" style="width: 100.0%; height: 100.0%;">臺大卓越研究大樓<br>調度站設此 → with-info 平均 cost=10.07 分<br>Δ=1.60 分</div>`)[0];
+                popup_047023d80e5d19049496f071d1342ccb.setContent(html_410f34b3ab99366c5ad82f7f90b1205f);
+            
+        
+
+        circle_marker_3f696b053e9118c9634134b7b699c4b2.bindPopup(popup_047023d80e5d19049496f071d1342ccb)
+        ;
+
+        
+    
+    
+            circle_marker_3f696b053e9118c9634134b7b699c4b2.bindTooltip(
+                `<div>
+                     臺大卓越研究大樓: 10.07 分
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_b0888e47fbe7d8be77075144f35004b3 = L.circleMarker(
+                [25.01411, 121.52997],
+                {"bubblingMouseEvents": true, "color": "#333", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#a50026", "fillOpacity": 0.9, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 9, "stroke": true, "weight": 1}
+            ).addTo(map_dd800dc9dab6b5e3b489e13e1ccfd4f5);
+        
+    
+        var popup_ed343e8fddac81a9e30a2d76d75cef7f = L.popup({
+  "maxWidth": 260,
+});
+
+        
+            
+                var html_5281eb25b47f2cea502d40a940a9c16e = $(`<div id="html_5281eb25b47f2cea502d40a940a9c16e" style="width: 100.0%; height: 100.0%;">臺大水源修齊會館<br>調度站設此 → with-info 平均 cost=10.07 分<br>Δ=1.60 分</div>`)[0];
+                popup_ed343e8fddac81a9e30a2d76d75cef7f.setContent(html_5281eb25b47f2cea502d40a940a9c16e);
+            
+        
+
+        circle_marker_b0888e47fbe7d8be77075144f35004b3.bindPopup(popup_ed343e8fddac81a9e30a2d76d75cef7f)
+        ;
+
+        
+    
+    
+            circle_marker_b0888e47fbe7d8be77075144f35004b3.bindTooltip(
+                `<div>
+                     臺大水源修齊會館: 10.07 分
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_b92b4a4476c0533d7a8e713b644ded16 = L.circleMarker(
+                [25.01547, 121.52892],
+                {"bubblingMouseEvents": true, "color": "#333", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#a50026", "fillOpacity": 0.9, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 9, "stroke": true, "weight": 1}
+            ).addTo(map_dd800dc9dab6b5e3b489e13e1ccfd4f5);
+        
+    
+        var popup_4ea056b4d012cfd1aaf5a6f668b1b62b = L.popup({
+  "maxWidth": 260,
+});
+
+        
+            
+                var html_6446253f9936dd8f6035b8fe291ed471 = $(`<div id="html_6446253f9936dd8f6035b8fe291ed471" style="width: 100.0%; height: 100.0%;">臺大水源舍區C棟<br>調度站設此 → with-info 平均 cost=10.07 分<br>Δ=1.56 分</div>`)[0];
+                popup_4ea056b4d012cfd1aaf5a6f668b1b62b.setContent(html_6446253f9936dd8f6035b8fe291ed471);
+            
+        
+
+        circle_marker_b92b4a4476c0533d7a8e713b644ded16.bindPopup(popup_4ea056b4d012cfd1aaf5a6f668b1b62b)
+        ;
+
+        
+    
+    
+            circle_marker_b92b4a4476c0533d7a8e713b644ded16.bindTooltip(
+                `<div>
+                     臺大水源舍區C棟: 10.07 分
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_d69239106a9030f885bac5c79e528247 = L.marker(
+                [25.01791, 121.54242],
+                {
+}
+            ).addTo(map_dd800dc9dab6b5e3b489e13e1ccfd4f5);
+        
+    
+            var icon_6bc9095fd93f6027afe4f52792e9b49c = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "star",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+            marker_d69239106a9030f885bac5c79e528247.bindTooltip(
+                `<div>
+                     最佳: 臺大獸醫館南側 (7.37分)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_d69239106a9030f885bac5c79e528247.setIcon(icon_6bc9095fd93f6027afe4f52792e9b49c);
+            
+</script>
+</html>
