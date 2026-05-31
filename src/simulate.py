@@ -20,16 +20,22 @@ import config as C
 import geo
 
 
-def dispatch_footprint(cluster_sids, min_cap=None):
-    """從 station_stats 取 cluster 內真實調度足跡：{sno: 每窗容量}。"""
+def dispatch_footprint(cluster_sids, min_cap=None, total_base=None):
+    """cluster 內調度足跡 {sno: 每窗容量}。
+    位置/相對比例由資料實測補車量決定；總量錨在物理中估 total_base（預設 100 台/窗），
+    因實際調度量難精確量測（約 2 車×25 + 現場解壓縮/多趟）。cap_scale 掃描涵蓋不確定性。"""
     min_cap = C.DISPATCH_MIN_CAP if min_cap is None else min_cap
+    total_base = C.DISPATCH_TOTAL_BASE if total_base is None else total_base
     st = pl.read_parquet(C.STATION_STATS_PARQUET)
     cs = set(cluster_sids)
-    caps = {}
+    raw = {}
     for r in st.iter_rows(named=True):
         if r["sno"] in cs and (r.get("dispatch_cap_peak") or 0) >= min_cap:
-            caps[r["sno"]] = float(r["dispatch_cap_peak"])
-    return caps
+            raw[r["sno"]] = float(r["dispatch_cap_peak"])
+    s = sum(raw.values())
+    if s <= 0:
+        return raw
+    return {k: v / s * total_base for k, v in raw.items()}   # 按資料比例、總量錨物理中估
 
 
 class Sim:

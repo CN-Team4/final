@@ -112,10 +112,16 @@ def plot_heatmap():
             jx = min(range(len(alphas)), key=lambda j: abs(sr[alphas[j]] - f_emp))
             ax.axvline(jx, color="red", ls="--", lw=1)
         if 1.0 in scales:
-            ax.axhline(scales.index(1.0), color="orange", ls="--", lw=1)
+            ax.axhline(scales.index(1.0), color="orange", ls="--", lw=1.2)
+        # 物理合理區間帶（50–200 台/窗）
+        if C.CAP_BAND[0] in scales and C.CAP_BAND[1] in scales:
+            lo = scales.index(C.CAP_BAND[0]); hi = scales.index(C.CAP_BAND[1])
+            ax.add_patch(plt.Rectangle((-0.5, lo - 0.5), len(alphas), hi - lo + 1,
+                         fill=False, edgecolor="white", lw=2.5))
         plt.colorbar(im, ax=ax, fraction=0.046, pad=0.04, label=lab)
     f_emp = C.ALPHA_EMPIRICAL / (1 + C.ALPHA_EMPIRICAL) * 100
-    fig.suptitle(f"二維場景：缺車程度 × 調度量（紅虛線=實證缺車{f_emp:.0f}%，橘虛線=真實調度量×1）")
+    fig.suptitle(f"二維場景：缺車程度 × 調度量（紅虛線=實證缺車{f_emp:.0f}%，"
+                 f"橘虛線=物理中估100台/窗，白框=合理區間50–200台/窗）")
     fig.tight_layout()
     p = os.path.join(C.RESULTS, "heatmap.png"); fig.savefig(p); plt.close(fig)
     print("  ->", p)

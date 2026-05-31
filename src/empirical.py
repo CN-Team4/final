@@ -70,7 +70,8 @@ def report(stats):
     for r in topr.iter_rows(named=True):
         print(f"  {r['sno']} {name.get(r['sno'],'?')[:18]:<18} 容量={r['dispatch_cap_peak']:.1f} 台/窗 (總補={r['refill_tot_peak']})")
     foot = cl.filter(pl.col("dispatch_cap_peak") >= 1.0)
-    print(f"  → 容量≥1 台/窗的站共 {foot.height} 站，合計 {foot['dispatch_cap_peak'].sum():.0f} 台/窗（即真實 dispatch 總服務量）")
+    print(f"  → 容量≥1 台/窗的站共 {foot.height} 站，偵測合計 {foot['dispatch_cap_peak'].sum():.0f} 台/窗")
+    print(f"     （此為偵測上限，可能含自然還車潮誤判；建模時總量錨物理中估，見 config.DISPATCH_TOTAL_BASE）")
 
     print("\n=== 目的地滿位機率（cluster，尖峰 bemp<=2 比例最高）===")
     topf = cl.sort("frac_full_peak", descending=True).head(8)
