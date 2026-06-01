@@ -16,10 +16,19 @@
 """
 from __future__ import annotations
 import time
+import datetime
 import polars as pl
 import config as C
 
 BORROW_CAP = 20   # 單一狀態變更計入的出借量上限（過濾調度整批作業雜訊）
+
+
+def _date_weekday_filter(lf):
+    """資料取值：自 C.DATA_START_YMD 起；C.WEEKDAY_ONLY 時只取平日（週一~週五）。"""
+    lf = lf.filter(pl.col("mday").dt.date() >= datetime.date(*C.DATA_START_YMD))
+    if getattr(C, "WEEKDAY_ONLY", False):
+        lf = lf.filter(pl.col("mday").dt.weekday() <= 5)   # polars: Mon=1..Sun=7
+    return lf
 
 
 def build_pit(cluster_sids=None):
@@ -38,6 +47,7 @@ def build_pit(cluster_sids=None):
     ).filter(
         pl.col("sno").is_not_null() & pl.col("sbi").is_not_null() & pl.col("mday").is_not_null()
     )
+    lf = _date_weekday_filter(lf)   # 自 DATA_START 起、只取平日
 
     # 去重 (sno,mday)：同一站同一狀態變更時間只留一筆
     lf = lf.unique(subset=["sno", "mday"]).sort(["sno", "mday"])

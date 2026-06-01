@@ -6,6 +6,7 @@
 輸出 data/processed/station_stats.parquet（每站尖峰統計），並印 cluster 重點表。
 """
 from __future__ import annotations
+import datetime
 import polars as pl
 import config as C
 import geo
@@ -23,6 +24,10 @@ def build_stats():
         pl.col("column_13").cast(pl.Int32, strict=False).alias("bemp"),
         pl.col("column_6").str.strptime(pl.Datetime, "%Y-%m-%d %H:%M:%S", strict=False).alias("mday"),
     ).filter(pl.col("sno").is_not_null() & pl.col("sbi").is_not_null() & pl.col("mday").is_not_null())
+    # 資料取值：自 DATA_START 起、只取平日
+    lf = lf.filter(pl.col("mday").dt.date() >= datetime.date(*C.DATA_START_YMD))
+    if getattr(C, "WEEKDAY_ONLY", False):
+        lf = lf.filter(pl.col("mday").dt.weekday() <= 5)
 
     lf = lf.unique(subset=["sno", "mday"]).sort(["sno", "mday"])
     lf = lf.with_columns([

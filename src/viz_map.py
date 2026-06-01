@@ -190,6 +190,7 @@ def map_cluster_static():
                        edgecolors="navy", linewidths=0.5, zorder=4, alpha=0.85)
         ax.scatter([], [], marker="s", c="#2e75b6", edgecolors="navy", label="真實調度足跡(大小=容量)")
     ax.scatter([], [], marker="^", c="dodgerblue", edgecolors="k", label="模擬起點")
+    ax.set_aspect("equal")   # 維持地圖長寬比（Web Mercator）
     _basemap(ax)
     ax.set_title(f"YouBike 模擬 cluster（官方臺大專區∪宿舍∪公館, {len(cluster)} 站）")
     ax.set_xticks([]); ax.set_yticks([]); ax.legend(loc="upper right", fontsize=9)
@@ -216,6 +217,7 @@ def map_exp2_static():
     bx, by = _to_webmerc(*sd[int(best["dispatch"])][:2])
     ax.scatter([bx], [by], marker="*", s=420, c="gold", edgecolors="k", zorder=5,
                label=f"最佳: {sd[int(best['dispatch'])][2]}")
+    ax.set_aspect("equal")   # 維持地圖長寬比（Web Mercator）
     _basemap(ax)
     ax.set_title(f"附錄(實驗二)：單點調度位置品質（綠=cost 低=佳, 實證α≈{C.ALPHA_EMPIRICAL})")
     ax.set_xticks([]); ax.set_yticks([]); ax.legend(loc="upper right", fontsize=9)
