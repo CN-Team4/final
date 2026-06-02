@@ -109,8 +109,9 @@ def plot_heatmap():
         # 實證缺車比例與真實調度量(×1)的標記
         f_emp = C.ALPHA_EMPIRICAL / (1 + C.ALPHA_EMPIRICAL) * 100
         if alphas:
-            jx = min(range(len(alphas)), key=lambda j: abs(sr[alphas[j]] - f_emp))
-            ax.axvline(jx, color="red", ls="--", lw=1)
+            xs = [sr[a] for a in alphas]                # 各欄對應的缺車比例%（sr 已是%）
+            xpos = float(np.interp(f_emp, xs, list(range(len(xs)))))  # 插值到真實32%位置,不貼格點
+            ax.axvline(xpos, color="red", ls="--", lw=1)
         if 1.0 in scales:
             ax.axhline(scales.index(1.0), color="orange", ls="--", lw=1.2)
         # 物理合理區間帶（50–200 台/窗）
