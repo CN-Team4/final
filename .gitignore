@@ -10,3 +10,8 @@ __pycache__/
 .DS_Store
 # 臨時檢查腳本
 src/_check_*.py
+
+# LaTeX aux
+REPORT.aux
+REPORT.log
+REPORT.out

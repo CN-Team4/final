@@ -6,6 +6,8 @@
 「**未取得調度資訊**」兩情境下抵達目的地的平均時間成本,主指標為兩組 cost 差。
 **唯一操弄變量是資訊**;調度供給(位置、容量)兩組完全相同且**由真實資料還原**。
 
+**完整報告**:[`REPORT.pdf`](REPORT.pdf)(英文正式論文格式;原始檔 `REPORT.tex`,中文舊版 `REPORT_zh.md`)。
+
 完整規格見 [`docs/final.md`](docs/final.md);結果與結論見 [`docs/RESULTS.md`](docs/RESULTS.md)、
 [`docs/CONCLUSIONS.md`](docs/CONCLUSIONS.md)。
 
