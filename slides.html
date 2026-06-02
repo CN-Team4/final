@@ -9,6 +9,13 @@
  .reveal table{margin:auto}.reveal th{background:#0d3b66;color:#fff;padding:4px 10px}
  .reveal td{padding:4px 10px;border-bottom:1px solid #ddd}
  .reveal section{text-align:center}
+
+ .lit-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px;text-align:left}
+ .lit-stack{display:flex;flex-direction:column;gap:12px;text-align:left;max-width:1060px;margin:0 auto}
+ .lit-card{border-left:8px solid #0d3b66;background:#f6f9fc;border-radius:12px;padding:14px 18px;box-shadow:0 2px 10px rgba(0,0,0,.08)}
+ .lit-card h3{margin:.05em 0 .35em;color:#0d3b66;font-size:.62em;line-height:1.25}
+ .lit-card p,.lit-card li{font-size:.50em;line-height:1.32}
+ .lit-card.compact p{font-size:.47em;line-height:1.25;margin:.35em 0}
 </style></head><body>
 <div class="reveal"><div class="slides">
 
@@ -28,6 +35,66 @@
       <b style="color:#0d3b66">把現有調度車位置公開給使用者，能不能讓大家更快到目的地？</b></li>
   </ul>
 </section>
+
+<section>
+  <h2>文獻回顧：預測與調度最佳化</h2>
+  <div class="lit-stack">
+    <div class="lit-card">
+      <h3>楊子瑢（2022），《臺北市 YouBike 共享單車車數預測系統之實作》</h3>
+      <p>針對臺北市 YouBike 站點，利用歷史車數、時間特徵與氣象資料，建立各站未來可借車數的預測模型。</p>
+      <p>將模型做成網頁系統，讓使用者可用於行程規劃，也可提供營運方作為調度參考。</p>
+      <p><b>限制：</b>研究主要回答「未來某站可能剩幾台車」，並未涉及調度之優化。</p>
+    </div>
+    <div class="lit-card">
+      <h3>周欣儀（2025），《臺大校總區周遭 YouBike 2.0 使用行為與調度優化研究》</h3>
+      <p>以臺大校總區與公館站周邊 YouBike 2.0 為場域，分析租借熱區、還車熱區與使用者騎乘時間，並建立調度模擬環境，比較不同調度策略的效果。</p>
+      <p>比較貪婪法、結合生存分析預測還車需求的 SurvivalALG，以及根據未來需求為參考的離線近似最佳方法。</p>
+      <p><b>限制：</b>本研究深入探討調度演算法問題，但重點仍是「營運方如何派車補車」。</p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <h2>文獻回顧：預測與調度最佳化</h2>
+  
+  <div class="lit-stack">
+    <div class="lit-card">
+      <h3>柯召璇（2015），《公共自行車分區及運補策略最佳化模型之研究》</h3>
+      <p>將中心位置、服務分區、運補車數量與車輛路線成本整合成最佳化模型，並運用模擬退火法求解，改善整體運補效率。</p>
+      <p><b>限制：</b>這類方法適合營運方做中長期規劃或調度決策，且需要明確的需求、時段與路線設定。</p>
+    </div>
+    <div class="lit-card">
+      <h3>陳柏叡等（2022），《利用運用 TDX 資訊分析及整合 App 系統提升台中共享自行車使用度》</h3>
+      <p> 從使用者角度出發，提出預約借車、預約還車、LED 顯示與後台需求統計等 App 與服務設計構想。</p>
+      <p><b>限制：</b>這篇研究指出了使用者確實需要更好的資訊服務，但較偏向功能發想與使用者滿意度分析，並沒有進一步量化「提供某種資訊」究竟可以替使用者節省多少時間。</p>
+    </div>
+
+    
+  </div>
+</section>
+
+<section>
+  <h2>文獻回顧：為什麼不只做調度最佳化？</h2>
+
+  <div class="lit-stack">
+    <div class="lit-card">
+    <h3>蘇昱齊（2023），〈臺大周遭 YouBike 短缺的背後，藏了什麼樣的調度問題？〉</h3>
+    <b><p class="lit-subtitle">現場限制：調度資源與人力本身吃緊</p></b>
+
+    <p><b>指出的問題：</b>臺大周遭 YouBike 營運端能動用的調度車、人力、搬運量與補車速度有限，使得即使知道哪些站點容易缺車，也不一定能即時補足。</p>
+
+    
+  </div>
+    <div class="lit-card highlight">
+      <h3>我們的切入點：不重新設計調度策略，而是提供既有調度資訊</h3>
+      <p>既有研究多著重於最佳化調度政策，以提升系統效率與服務水準。</p>
+      <p>然而，實際調度仍受限於營運方的人力、車輛與作業流程，因此政策最佳化未必能立即轉化為實際效益。</p>
+      <p>本研究因此轉向另一個問題：在既有調度資源有限的情況下，單純揭露調度資訊，是否也能帶來額外幫助？</p>
+    </div>
+  </div>
+</section>
+
+
 
 <section>
   <h2>實驗設計</h2>
