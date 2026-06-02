@@ -18,7 +18,7 @@ import demand
 from simulate import Sim, dispatch_footprint
 
 
-def build_data(alpha=None, seed=None, max_agents=240):
+def build_data(alpha=None, seed=None, max_agents=5000):
     alpha = C.ALPHA_EMPIRICAL if alpha is None else alpha
     seed = C.BASE_SEED if seed is None else seed
     sim = Sim()

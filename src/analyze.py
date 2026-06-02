@@ -93,13 +93,13 @@ def plot_heatmap():
     fig, axes = plt.subplots(1, 2, figsize=(14, 5))
     xt = [f"{sr[a]:.0f}" for a in alphas]
     base_total = max(cap_at.get((alphas[0], s), 0) for s in scales) if scales else 0
-    yt = [f"×{s:g}\n(~{cap_at.get((alphas[0], s), 0):.0f}台)" for s in scales]
+    yt = [f"{cap_at.get((alphas[0], s), 0):.0f} 台" for s in scales]
     for ax, Z, title, lab in [(axes[0], Zdiff, "資訊省下時間 Δ (分鐘)", "Δ (分)"),
                               (axes[1], Zrel, "相對改善 (%)", "%")]:
         im = ax.imshow(Z, origin="lower", aspect="auto", cmap="viridis")
         ax.set_xticks(range(len(alphas))); ax.set_xticklabels(xt)
         ax.set_yticks(range(len(scales))); ax.set_yticklabels(yt, fontsize=8)
-        ax.set_xlabel("缺車比例 (%)"); ax.set_ylabel("調度量縮放（×真實量）")
+        ax.set_xlabel("缺車比例 (%)"); ax.set_ylabel("尖峰時段調度車數量（台）")
         ax.set_title(title)
         for i in range(len(scales)):
             for j in range(len(alphas)):
@@ -109,8 +109,9 @@ def plot_heatmap():
         # 實證缺車比例與真實調度量(×1)的標記
         f_emp = C.ALPHA_EMPIRICAL / (1 + C.ALPHA_EMPIRICAL) * 100
         if alphas:
-            jx = min(range(len(alphas)), key=lambda j: abs(sr[alphas[j]] - f_emp))
-            ax.axvline(jx, color="red", ls="--", lw=1)
+            xs = [sr[a] for a in alphas]                # 各欄對應的缺車比例%（sr 已是%）
+            xpos = float(np.interp(f_emp, xs, list(range(len(xs)))))  # 插值到真實32%位置,不貼格點
+            ax.axvline(xpos, color="red", ls="--", lw=1)
         if 1.0 in scales:
             ax.axhline(scales.index(1.0), color="orange", ls="--", lw=1.2)
         # 物理合理區間帶（50–200 台/窗）
@@ -120,8 +121,8 @@ def plot_heatmap():
                          fill=False, edgecolor="white", lw=2.5))
         plt.colorbar(im, ax=ax, fraction=0.046, pad=0.04, label=lab)
     f_emp = C.ALPHA_EMPIRICAL / (1 + C.ALPHA_EMPIRICAL) * 100
-    fig.suptitle(f"二維場景：缺車程度 × 調度量（紅虛線=實證缺車{f_emp:.0f}%，"
-                 f"橘虛線=物理中估100台/窗，白框=合理區間50–200台/窗）")
+    fig.suptitle(f"資訊能省下的時間（紅線=台大實際缺車約{f_emp:.0f}%，"
+                 f"橘線=實際調度量約100台，白框=合理調度量50–200台）")
     fig.tight_layout()
     p = os.path.join(C.RESULTS, "heatmap.png"); fig.savefig(p); plt.close(fig)
     print("  ->", p)
