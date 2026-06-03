@@ -76,11 +76,8 @@ def map_cluster_interactive():
             tooltip=nm,
         ).add_to(fg_st)
 
-    # Goal（公館）
-    glon, glat, gnm = sd[C.GOAL_STATION]
-    folium.Marker([glat, glon], tooltip=f"Goal: {gnm}",
-                  icon=folium.Icon(color="green", icon="flag")).add_to(m)
-    # （不再畫 START_STATIONS 假三角；使用者起點由上方圓點的需求權重表示）
+    # （每站一律平等：不畫公館 Goal 特別標記，也不畫 START_STATIONS 假三角；
+    #   使用者起點由上方圓點需求權重表示，目的地為各 agent 自己的真實 OD 終點）
     # 真實調度足跡（資料實測，大小=每窗容量）
     from simulate import dispatch_footprint
     caps = dispatch_footprint(cluster)
@@ -166,9 +163,8 @@ def map_cluster_static():
     sc = ax.scatter(xs, ys, s=20 + 180 * ds / (ds.max() or 1), c=ds, cmap="YlOrRd",
                     edgecolors="k", linewidths=0.4, alpha=0.9, zorder=3)
     plt.colorbar(sc, ax=ax, fraction=0.035, pad=0.02, label="借車需求 (趟/日)，即使用者起點權重")
-    # Goal / 最佳調度（不再畫 START_STATIONS 假三角；起點由圓點需求權重表示）
-    gx, gy = _to_webmerc(*sd[C.GOAL_STATION][:2])
-    ax.scatter([gx], [gy], marker="*", s=420, c="lime", edgecolors="k", zorder=5, label="Goal 公館")
+    # （每站一律平等：不畫公館 Goal 特別標記、不畫 START_STATIONS 假三角；
+    #   起點由圓點需求權重表示，目的地為各 agent 自己的真實 OD 終點）
     # 真實調度足跡（藍方塊，大小=容量）
     from simulate import dispatch_footprint
     caps = dispatch_footprint(cluster)

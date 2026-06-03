@@ -77,12 +77,10 @@ def build_data(alpha=None, seed=None, max_agents=5000):
         agents = [agents[k] for k in sorted(sel)]
 
     clon, clat, _ = (sd[C.CLUSTER_CENTER][0], sd[C.CLUSTER_CENTER][1], None)
-    goal = sd[C.GOAL_STATION]
     cmax = max(caps.values()) if caps else 1
     data = {
         "center": [clat, clon], "zoom": 15,
         "window": [C.SIM_WINDOW[0], C.SIM_WINDOW[1]],
-        "goal": [goal[1], goal[0]],
         "stations": [[round(sd[s][1], 6), round(sd[s][0], 6)] for s in cluster],  # 全 cluster 站(底圖)
         "dispatch": [[sd[g][1], sd[g][0], round(c, 1), round(c / cmax, 3)] for g, c in caps.items()],
         "agents": agents,
@@ -147,13 +145,12 @@ const mapL=mk('mapL'),mapR=mk('mapR');
 let syncing=false;
 function sync(a,b){a.on('move',()=>{if(syncing)return;syncing=true;b.setView(a.getCenter(),a.getZoom(),{animate:false});syncing=false;});}
 sync(mapL,mapR);sync(mapR,mapL);
-// 全站底圖 + 調度站 + Goal
+// 全站底圖 + 調度站（每站平等，不特別標記公館；目的地為各 agent 自己的真實 OD 終點）
 function deco(m){
   (D.stations||[]).forEach(s=>{L.circleMarker([s[0],s[1]],{radius:2.5,weight:0,
      fillColor:'#9aa',fillOpacity:.55}).addTo(m).bindTooltip('站點(可能的使用者起點)');});
   D.dispatch.forEach(d=>{L.circleMarker([d[0],d[1]],{radius:4+8*d[3],color:'#1f4e79',weight:1,
      fillColor:'#2e75b6',fillOpacity:.85}).addTo(m).bindTooltip('調度站 '+d[2]+' 台/窗');});
-  L.marker([D.goal[0],D.goal[1]]).addTo(m).bindTooltip('Goal 公館');
 }
 deco(mapL);deco(mapR);
 // 預建 agent markers
