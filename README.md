@@ -42,6 +42,14 @@ cd src && bash run_pipeline.sh
 > 註:`data/processed/*.parquet`(站點、OD、$P^i(t)$、實證統計)已入庫,
 > 若只想重跑模擬與繪圖、不重算 44GB,可直接 `cd src && python experiments.py && python analyze.py`。
 
+## 編譯報告(REPORT.pdf)
+報告使用 **BibTeX**(`references.bib`)管理參考文獻,需 **XeLaTeX + BibTeX**(TeX Live;中文需 Noto Sans CJK TC):
+```bash
+bash build_report.sh        # 等同 xelatex -> bibtex -> xelatex -> xelatex
+```
+> 切勿只跑一次 `xelatex`,否則內文引用會解析失敗、顯示成 [?]。圖片取自 `results/`(`graphicspath` 已指向),
+> 請先跑過管線或使用已入庫的 `results/*.png`。
+
 ## 目錄結構
 ```
 src/                模擬與資料管線（見下表）
