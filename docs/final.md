@@ -193,7 +193,7 @@ $ret_j=\text{frac\_full}_j(dist(j,nv)/V_{bike}+dist(nv,j)/V_{walk})$。
 - OpenStreetMap Contributors (2024). *OpenStreetMap*. https://www.openstreetmap.org
 - Agafonkin, V. (2024). *Leaflet.js*. https://leafletjs.com
 - 臺北市政府資料大平臺. *臺北市 YouBike 起訖站點統計*. https://data.taipei
-- 臺北市 YouBike 2.0 即時場站動態資料（創創資料）。
+- 臺北市 YouBike 2.0 即時場站動態資料。
 
 ---
 

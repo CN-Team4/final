@@ -15,7 +15,7 @@ cnl_youbike/
 └── docs/                 # 文件
 ```
 
-## 資料來源 1 — Google Drive（創創資料）
+## 資料來源 1 — Google Drive
 檔名：`ubike_station_dynamics_202508_202509.zip`（9.1 GB 壓縮 / 43.9 GB 解壓）
 內容：**YouBike 2.0 即時場站動態資料**，2025-08 ~ 2025-09，輪詢快照，逐筆一站一次。
 CSV 無表頭，18 欄（YouBike 2.0 標準格式推斷）：

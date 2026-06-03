@@ -269,4 +269,4 @@ cd src && bash run_pipeline.sh     # 站點→P^i(t)→實證→實驗→圖→�
 - OpenStreetMap Contributors (2024). *OpenStreetMap*. <https://www.openstreetmap.org>
 - Agafonkin, V. (2024). *Leaflet.js — interactive maps library*. <https://leafletjs.com>
 - 臺北市政府資料大平臺，*臺北市 YouBike 起訖站點統計*，<https://data.taipei>
-- 臺北市 YouBike 2.0 即時場站動態資料（創創資料）。
+- 臺北市 YouBike 2.0 即時場站動態資料。
