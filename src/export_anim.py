@@ -83,6 +83,7 @@ def build_data(alpha=None, seed=None, max_agents=5000):
         "center": [clat, clon], "zoom": 15,
         "window": [C.SIM_WINDOW[0], C.SIM_WINDOW[1]],
         "goal": [goal[1], goal[0]],
+        "stations": [[round(sd[s][1], 6), round(sd[s][0], 6)] for s in cluster],  # 全 cluster 站(底圖)
         "dispatch": [[sd[g][1], sd[g][0], round(c, 1), round(c / cmax, 3)] for g, c in caps.items()],
         "agents": agents,
         "alpha": alpha, "shortage": alpha / (1 + alpha),
@@ -128,9 +129,10 @@ HTML = r"""<!DOCTYPE html><html lang="zh-Hant"><head><meta charset="utf-8">
  <div class="pane"><div class="ttl" style="color:#b03030">未取得資訊 without info</div>
    <div id="mapL" class="map"></div>
    <div class="stat" id="stL"></div>
-   <div class="lgd"><span class="dot" style="background:#888"></span>走路
-     <span class="dot" style="background:#2e9b46;margin-left:8px"></span>騎車
-     <span class="dot" style="background:#2e75b6;border-radius:2px;margin-left:8px"></span>調度站</div></div>
+   <div class="lgd"><span class="dot" style="background:#9aa"></span>站點(可能起點)
+     <span class="dot" style="background:#444;margin-left:8px"></span>走路中
+     <span class="dot" style="background:#1a8a3a;margin-left:8px"></span>騎車中
+     <span class="dot" style="background:#2e75b6;border-radius:2px;margin-left:8px"></span>調度站(大小=容量)</div></div>
  <div class="pane"><div class="ttl" style="color:#1f7a1f">取得資訊 with info</div>
    <div id="mapR" class="map"></div>
    <div class="stat" id="stR"></div></div>
@@ -145,8 +147,10 @@ const mapL=mk('mapL'),mapR=mk('mapR');
 let syncing=false;
 function sync(a,b){a.on('move',()=>{if(syncing)return;syncing=true;b.setView(a.getCenter(),a.getZoom(),{animate:false});syncing=false;});}
 sync(mapL,mapR);sync(mapR,mapL);
-// 調度站 + Goal
+// 全站底圖 + 調度站 + Goal
 function deco(m){
+  (D.stations||[]).forEach(s=>{L.circleMarker([s[0],s[1]],{radius:2.5,weight:0,
+     fillColor:'#9aa',fillOpacity:.55}).addTo(m).bindTooltip('站點(可能的使用者起點)');});
   D.dispatch.forEach(d=>{L.circleMarker([d[0],d[1]],{radius:4+8*d[3],color:'#1f4e79',weight:1,
      fillColor:'#2e75b6',fillOpacity:.85}).addTo(m).bindTooltip('調度站 '+d[2]+' 台/窗');});
   L.marker([D.goal[0],D.goal[1]]).addTo(m).bindTooltip('Goal 公館');
@@ -194,7 +198,7 @@ function frame(ts){
 function upd(mk,p){
   if(p===null||p==='done'){mk.setStyle({fillOpacity:p==='done'?0.12:0});return;}
   mk.setLatLng([p[0],p[1]]);
-  mk.setStyle({fillOpacity:.9,fillColor:p[2]===1?'#2e9b46':'#888',radius:p[2]===1?4.5:4});
+  mk.setStyle({fillOpacity:.95,fillColor:p[2]===1?'#1a8a3a':'#444',weight:0.6,color:'#fff',radius:p[2]===1?5:4});
 }
 function stat(name,n,csum,s){
   const avg=n?(csum/n/60):0;

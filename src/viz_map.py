@@ -61,8 +61,7 @@ def map_cluster_interactive():
 
     m = folium.Map(location=[clat, clon], zoom_start=15, tiles="OpenStreetMap",
                    control_scale=True)
-    fg_st = folium.FeatureGroup(name="cluster 站點（大小=尖峰需求）").add_to(m)
-    fg_sp = folium.FeatureGroup(name="模擬起點 START_STATIONS").add_to(m)
+    fg_st = folium.FeatureGroup(name="cluster 站點（圓點大小=借車需求，即使用者起點權重）").add_to(m)
     fg_od = folium.FeatureGroup(name="Top OD 流", show=False).add_to(m)
 
     lv = list(load.values())
@@ -81,12 +80,7 @@ def map_cluster_interactive():
     glon, glat, gnm = sd[C.GOAL_STATION]
     folium.Marker([glat, glon], tooltip=f"Goal: {gnm}",
                   icon=folium.Icon(color="green", icon="flag")).add_to(m)
-    # 起點
-    for s in C.START_STATIONS:
-        if s in sd:
-            lon, lat, nm = sd[s]
-            folium.Marker([lat, lon], tooltip=f"起點: {nm}",
-                          icon=folium.Icon(color="blue", icon="user")).add_to(fg_sp)
+    # （不再畫 START_STATIONS 假三角；使用者起點由上方圓點的需求權重表示）
     # 真實調度足跡（資料實測，大小=每窗容量）
     from simulate import dispatch_footprint
     caps = dispatch_footprint(cluster)
@@ -171,14 +165,10 @@ def map_cluster_static():
     ds = np.array(ds)
     sc = ax.scatter(xs, ys, s=20 + 180 * ds / (ds.max() or 1), c=ds, cmap="YlOrRd",
                     edgecolors="k", linewidths=0.4, alpha=0.9, zorder=3)
-    plt.colorbar(sc, ax=ax, fraction=0.035, pad=0.02, label="尖峰基礎需求 (趟/日)")
-    # Goal / 起點 / 最佳調度
+    plt.colorbar(sc, ax=ax, fraction=0.035, pad=0.02, label="借車需求 (趟/日)，即使用者起點權重")
+    # Goal / 最佳調度（不再畫 START_STATIONS 假三角；起點由圓點需求權重表示）
     gx, gy = _to_webmerc(*sd[C.GOAL_STATION][:2])
     ax.scatter([gx], [gy], marker="*", s=420, c="lime", edgecolors="k", zorder=5, label="Goal 公館")
-    for s in C.START_STATIONS:
-        if s in sd:
-            x, y = _to_webmerc(*sd[s][:2])
-            ax.scatter([x], [y], marker="^", s=120, c="dodgerblue", edgecolors="k", zorder=5)
     # 真實調度足跡（藍方塊，大小=容量）
     from simulate import dispatch_footprint
     caps = dispatch_footprint(cluster)
@@ -189,7 +179,7 @@ def map_cluster_static():
             ax.scatter([x], [y], marker="s", s=30 + 120 * cap / cmax, c="#2e75b6",
                        edgecolors="navy", linewidths=0.5, zorder=4, alpha=0.85)
         ax.scatter([], [], marker="s", c="#2e75b6", edgecolors="navy", label="真實調度足跡(大小=容量)")
-    ax.scatter([], [], marker="^", c="dodgerblue", edgecolors="k", label="模擬起點")
+    ax.scatter([], [], marker="o", c="orange", edgecolors="k", label="站點(大小=借車需求/起點)")
     ax.set_aspect("equal")   # 維持地圖長寬比（Web Mercator）
     _basemap(ax)
     ax.set_title(f"YouBike 模擬 cluster（官方臺大專區∪宿舍∪公館, {len(cluster)} 站）")
