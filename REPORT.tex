@@ -20,8 +20,11 @@
 
 \title{\vspace{-1.2em}\textbf{The Value of Sharing Rebalancing Information on\\
 YouBike Users' Waiting Cost:\\ A Data-Driven Time-Step Simulation}}
-\author{Group 4 (CN-Team4)\\
-Computer Networks Laboratory, National Taiwan University\\
+\author{Group 4 (CN-Team4)\\[0.45em]
+\small
+YU-CHIAN DUAN (B12902069) \quad PIN-HAO CHEN (B12902048) \quad BING-HAN LIN (B12902027)\\
+YU-SIANG DENG (B12902004) \quad BO-HUNG SHEN (B12902075) \quad MING-LUNG TSAI (B12902078)\\[0.45em]
+\normalsize Computer Networks Laboratory, National Taiwan University\\
 \small\texttt{https://github.com/CN-Team4/final}}
 \date{\today}
 
@@ -128,6 +131,11 @@ Instead of an arbitrary radius, the cluster follows YouBike's official zoning:
 \emph{NTU zone} $\cup$ stations named ``NTU'' (including the peripheral dormitory belt) $\cup$ the Gongguan exits (goal)
 $-$ the downtown NTU-Hospital stations $=$ \textbf{76 stations}. Stations form a complete graph; distances are Manhattan; riding
 speed is $5\times$ walking ($V_{\mathrm{walk}}=1.25$, $V_{\mathrm{bike}}=6.25$\,m/s).
+
+\begin{figure}[h]\centering\includegraphics[width=0.86\textwidth]{map_cluster.png}
+\caption{The 76-station NTU cluster. Blue squares mark the 37 data-detected dispatch stations (square size $\propto$ capacity);
+red/orange/yellow dots show per-station borrow demand (larger dot $=$ higher origin weight). Cluster $=$ official NTU zone
+$\cup$ ``NTU''-named stations (incl.\ the dormitory belt) $\cup$ Gongguan exits $-$ NTU-Hospital stations.}\label{fig:cluster}\end{figure}
 
 \subsection{Dispatch Resource}
 \textbf{Location/distribution} is detected from data: a single-step jump of $\ge 10$ in a station's available bikes is attributed
@@ -264,35 +272,22 @@ lever that complements rather than replaces dispatch optimization. The study is 
 \section*{Author Contributions}
 All six members contributed equally (1/6 each).
 \begin{table}[h]\centering\small
-\begin{tabular}{p{2.6cm}p{9.6cm}}
+\begin{tabular}{p{4.4cm}p{2.2cm}p{7.6cm}}
 \toprule
-Member & Role \\
+Member & Student ID & Role \\
 \midrule
-段宇謙 & Data integration and empirical statistics (44\,GB real-time dynamics) \\
-陳品豪 & Algorithm and simulation implementation \\
-林秉翰 & Project proposal, slides, oral presentation \\
-鄧育翔 & Slides, oral presentation \\
-沈柏宏 & Report writing \\
-蔡明龍 & Report writing \\
+段宇謙 (YU-CHIAN DUAN) & B12902069 & Data integration and empirical statistics (44\,GB real-time dynamics) \\
+陳品豪 (PIN-HAO CHEN) & B12902048 & Algorithm and simulation implementation \\
+林秉翰 (BING-HAN LIN) & B12902027 & Project proposal, slides, oral presentation \\
+鄧育翔 (YU-SIANG DENG) & B12902004 & Slides, oral presentation \\
+沈柏宏 (BO-HUNG SHEN) & B12902075 & Report writing \\
+蔡明龍 (MING-LUNG TSAI) & B12902078 & Report writing \\
 \bottomrule
 \end{tabular}
 \end{table}
 
-\begin{thebibliography}{9}\small
-\bibitem{yang2022} 楊子瑢，《臺北市 YouBike 共享單車車數預測系統之實作》, 2022.
-\bibitem{chou2025} 周欣儀，《臺大校總區周遭 YouBike 2.0 使用行為與調度優化研究》, 2025.
-\bibitem{ko2015} 柯召璇，《公共自行車分區及運補策略最佳化模型之研究》, 2015.
-\bibitem{chen2022} 陳柏叡 等，《利用 TDX 資訊分析及整合 App 系統提升台中共享自行車使用度》, 2022.
-\bibitem{su2023} 蘇昱齊，〈臺大周遭 YouBike 短缺的背後，藏了什麼樣的調度問題？〉, 2023.
-\bibitem{data} Taipei Open Data Platform, \emph{Taipei YouBike Origin--Destination Station Statistics}, \url{https://data.taipei}.
-\bibitem{osm} OpenStreetMap Contributors, 2024, \url{https://www.openstreetmap.org}; V.\ Agafonkin, \emph{Leaflet.js}, \url{https://leafletjs.com}.
-\end{thebibliography}
-
-\appendix
-\section{Reproducibility}
-\texttt{pip install -r requirements.txt; bash fetch\_data.sh; cd src \&\& bash run\_pipeline.sh.}
-Processed parquet files are committed, so the simulation and figures reproduce \emph{without} the 44\,GB raw data
-(\texttt{cd src \&\& python experiments.py \&\& analyze.py \&\& viz\_map.py \&\& export\_anim.py}). A fresh clone reproduces the
-reported numbers exactly (e.g., at 4.8\% shortage $\Delta=262$\,s/45\%; best single location = Men's Dormitory~1, 8.66\,min).
+{\small
+\bibliographystyle{unsrt}
+\bibliography{references}}
 
 \end{document}
