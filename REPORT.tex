@@ -77,10 +77,10 @@ revealing the existing dispatch information}. The study follows three principles
 \item \textbf{Information is the only manipulated variable.} Both scenarios use the same dispatch locations, capacities, and counts;
 they differ only in whether the user knows them. Biases in the data (existing rebalancing, censored demand) are common-mode and
 cancel in the cost difference.
-\item \textbf{No supply is added.} We quantify the marginal benefit of disclosing \emph{existing} dispatch locations, not of adding
+\item \textbf{No extra supply is added.} We quantify the marginal benefit of disclosing \emph{existing} dispatch locations, not of adding
 vehicles.
 \item \textbf{Replace assumptions with data.} Dispatch footprint, shortage rate, departure distribution, and dock-fullness are all
-estimated from real data; the only behavioral assumption is the detour tolerance $\tau$, which we sweep.
+estimated from real data; the only behavioral assumption is the detour-tolerance ratio $\tau$.
 \end{enumerate}
 
 \subsection{Contributions}
@@ -193,9 +193,11 @@ combination runs 30 Monte-Carlo repetitions (Poisson shortage counts); we report
 scenarios use the same agents and capacities.
 
 \section{Experimental Setup}
-\textbf{Exp.\ 1:} fix the real footprint ($s{=}1$, $\tau{=}0.5$) and sweep $\alpha$. \textbf{2-D sweep:} $\alpha\times s$ (shortage
-$\times$ dispatch quantity). \textbf{$\tau$ sensitivity:} sweep $\tau\times\alpha$. \textbf{Appendix:} concentrate the total
-capacity at a single station and sweep all 76 to find the best location. \textbf{Baseline:} without information.
+\textbf{Exp.\ 1:} fix the real footprint ($s{=}1$, $\tau{=}0.5$) and sweep $\alpha$.
+\textbf{2-D sweep:} $\alpha\times s$ (shortage $\times$ dispatch quantity).
+\textbf{$\tau$ sensitivity:} sweep $\tau\times\alpha$.
+\textbf{Appendix:} concentrate the total capacity at a single station and sweep all 76 to find the best location.
+\textbf{Baseline:} without information.
 Environment: Python~3.14, polars, NumPy, Matplotlib, Folium (Leaflet), contextily.
 
 \section{Results}
