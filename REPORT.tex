@@ -7,6 +7,7 @@
 \usepackage{graphicx}
 \graphicspath{{results/}}
 \usepackage{booktabs}
+\usepackage{array}
 \usepackage{caption}
 \captionsetup{font=small,labelfont=bf}
 \usepackage[hidelinks]{hyperref}
@@ -21,10 +22,9 @@
 \title{\vspace{-1.2em}\textbf{The Value of Sharing Rebalancing Information on\\
 YouBike Users' Waiting Cost:\\ A Data-Driven Time-Step Simulation}}
 \author{Group 4 (CN-Team4)\\[0.45em]
-\small
-YU-CHIAN DUAN (B12902069) \quad PIN-HAO CHEN (B12902048)\\
-BING-HAN LIN (B12902027) \quad YU-SIANG DENG (B12902004)\\
-BO-HUNG SHEN (B12902075) \quad MING-LUNG TSAI (B12902078)\\[0.45em]
+\small YU-CHIAN DUAN (B12902069) \quad PIN-HAO CHEN (B12902048)\\
+\small BING-HAN LIN (B12902027) \quad YU-SIANG DENG (B12902004)\\
+\small BO-HUNG SHEN (B12902075) \quad MING-LUNG TSAI (B12902078)\\[0.45em]
 \normalsize Computer Networks Laboratory, National Taiwan University\\
 \small\texttt{https://github.com/CN-Team4/final}}
 \date{\today}
@@ -111,7 +111,7 @@ throughput, and replenishment speed are tight, so even knowing which stations ru
 dispatch information to users under a fixed, constrained dispatch operation---the question we address.
 
 \section{Data}
-\begin{table}[h]\centering\caption{Datasets.}\small
+\begin{table}[h]\centering\caption{Datasets.}\label{tab:data}\small
 \begin{tabular}{p{3.0cm}p{2.0cm}p{6.0cm}}
 \toprule
 Source & Period & Use \\
@@ -121,8 +121,8 @@ Taipei YouBike OD statistics (data.taipei) & Dec.\ 2025, weekdays & Monthly OD d
 \bottomrule
 \end{tabular}
 \end{table}
-The dynamics file is header-less; column meanings follow the official YouBike API schema and were verified against value
-relationships (e.g., $\texttt{sbi}+\texttt{bemp}\approx\texttt{tot}$). We restrict to September 2025 weekdays (excluding the August
+Table~\ref{tab:data} summarizes the two datasets. The dynamics file is header-less; column meanings follow the official YouBike
+API schema and were verified against value relationships (e.g., $\texttt{sbi}+\texttt{bemp}\approx\texttt{tot}$). We restrict to September 2025 weekdays (excluding the August
 summer break and weekends) to align with the weekday OD data and the in-semester regime. Processing uses streaming reads on a
 144-core machine ($\approx$60\,s per full pass); both datasets are fetched by \texttt{fetch\_data.sh}.
 
@@ -130,7 +130,7 @@ summer break and weekends) to align with the weekday OD data and the in-semester
 \subsection{Station Cluster (76 stations)}
 Instead of an arbitrary radius, the cluster follows YouBike's official zoning:
 \emph{NTU zone} $\cup$ stations named ``NTU'' (including the peripheral dormitory belt) $\cup$ the Gongguan exits (goal)
-$-$ the downtown NTU-Hospital stations $=$ \textbf{76 stations}. Stations form a complete graph; distances are Manhattan; riding
+$-$ the downtown NTU-Hospital stations $=$ \textbf{76 stations} (Figure~\ref{fig:cluster}). Stations form a complete graph; distances are Manhattan; riding
 speed is $5\times$ walking ($V_{\mathrm{walk}}=1.25$, $V_{\mathrm{bike}}=6.25$\,m/s).
 
 \begin{figure}[h]\centering\includegraphics[width=0.86\textwidth]{map_cluster.png}
@@ -165,9 +165,13 @@ $\alpha/(1+\alpha)$; $\alpha$ is the swept variable.
 \subsection{Empirical Estimation}
 \textbf{\Pit:} between consecutive status changes, a drop in \texttt{sbi} counts as a borrow; borrows are aggregated by hour and
 normalized per station (1{,}651 stations). The simulation uses each origin's own \Pit\ (the cluster curve is shown only for
-illustration); the NTU curve is multi-peak ($\approx$09{:}00, 13{:}00, 17{:}00) with peak window 17{:}00--19{:}00.
+illustration); the NTU curve is multi-peak ($\approx$09{:}00, 13{:}00, 17{:}00) with peak window 17{:}00--19{:}00 (Figure~\ref{fig:pit}).
 \textbf{Shortage rate:} the peak $\texttt{sbi}=0$ time fraction, demand-weighted $f\approx 32\%$, i.e.\ $\alpha\approx0.48$.
 \textbf{Dock-fullness:} peak fraction with $\texttt{bemp}\le 2$ ($\approx$80--90\% at the Gongguan exits), used for return cost.
+
+\begin{figure}[h]\centering\includegraphics[width=0.92\textwidth]{pit_cluster.png}
+\caption{Cluster-aggregate departure distribution \Pit\ (campus multi-peak; orange = peak window). The simulation uses each
+station's own \Pit.}\label{fig:pit}\end{figure}
 
 \subsection{User Decision and Cost (no waiting)}
 \textbf{Without information:} walk to the single nearest station; if it is a dispatch station with capacity, ride to the
@@ -195,10 +199,6 @@ capacity at a single station and sweep all 76 to find the best location. \textbf
 Environment: Python~3.14, polars, NumPy, Matplotlib, Folium (Leaflet), contextily.
 
 \section{Results}
-\begin{figure}[h]\centering\includegraphics[width=0.92\textwidth]{pit_cluster.png}
-\caption{Cluster-aggregate departure distribution \Pit\ (campus multi-peak; orange = peak window). The simulation uses each
-station's own \Pit.}\label{fig:pit}\end{figure}
-
 At the operating point ($\alpha\approx0.48$, capacity $=100$), the share of shortage users obtaining a bike rises from
 $\approx$6\% (without) to $\approx$15\% (with) information ($\approx 2.5\times$).
 
@@ -206,7 +206,7 @@ $\approx$6\% (without) to $\approx$15\% (with) information ($\approx 2.5\times$)
 \caption{Exp.\ 1. Left: mean arrival cost per scenario. Right: cost difference $\Delta$ (95\% CI); orange band = 10--20\%
 hypothesis range, red dashed line = empirical $\approx$32\% shortage. Dispatch capacity $=100$ bikes/window.}\label{fig:exp1}\end{figure}
 
-\begin{table}[h]\centering\caption{Exp.\ 1 (capacity $=100$ bikes/window).}\small
+\begin{table}[h]\centering\caption{Exp.\ 1 (capacity $=100$ bikes/window).}\label{tab:exp1}\small
 \begin{tabular}{rrrrr}
 \toprule
 Shortage & Without & With & $\Delta$ (saved) & Relative \\
@@ -222,29 +222,29 @@ Shortage & Without & With & $\Delta$ (saved) & Relative \\
 \end{tabular}
 \end{table}
 
-Mean cost without information is $\approx$10--11\,min, flat in $\alpha$ (random search is insensitive to shortage); with
-information it rises as the dispatch capacity saturates. The hypothesis holds: at 10--20\% shortage information saves
+As Figure~\ref{fig:exp1} and Table~\ref{tab:exp1} show, mean cost without information is $\approx$10--11\,min, flat in $\alpha$
+(random search is insensitive to shortage); with information it rises as the dispatch capacity saturates. The hypothesis holds: at 10--20\% shortage information saves
 \textbf{2.4--3.2\,min (22--31\%)}; at the empirical $\approx$32\% it still saves $\approx$2.0\,min (18\%).
 
 \begin{figure}[h]\centering\includegraphics[width=\textwidth]{heatmap.png}
 \caption{$\Delta$ (min) and relative improvement (\%) over shortage $\times$ dispatch quantity. Red line = empirical shortage,
 orange line = mid-estimate 100 bikes, white box = plausible band 50--200.}\label{fig:heat}\end{figure}
 
-Information is most valuable when shortage is low and dispatch ample (upper-left). Within the plausible band at the empirical
+Figure~\ref{fig:heat} shows that information is most valuable when shortage is low and dispatch is ample (upper-left). Within the plausible band at the empirical
 shortage, the improvement is \textbf{15--22\% ($\Delta\approx$1.8--2.4\,min)}; raising dispatch from $\approx$50 to $\approx$400
 bikes lifts it from $\approx$15\% to $\approx$29\%.
 
 \begin{figure}[h]\centering\includegraphics[width=0.92\textwidth]{tau_sensitivity.png}
 \caption{$\Delta$ vs shortage for $\tau\in\{0.3,0.5,0.7,0.9\}$.}\label{fig:tau}\end{figure}
 
-Across the full $\tau$ range the curves differ by less than $0.5$\,min with no consistent direction: the dense real footprint
+In Figure~\ref{fig:tau}, across the full $\tau$ range the curves differ by less than $0.5$\,min with no consistent direction: the dense real footprint
 makes the tolerance rarely bind, so the conclusion does not depend on $\tau$.
 
 \begin{figure}[h]\centering\includegraphics[width=0.78\textwidth]{map_exp2.png}
 \caption{With-info mean cost when the total capacity is concentrated at each candidate station (green = better).}\label{fig:exp2}\end{figure}
 
-When concentrated at a single station, the best locations lie in the \textbf{eastern dormitory/department area} (around Men's
-Dormitory~1 and Mingda Hall), near the most shortage-prone interior stations (second EE building 62\%, Forestry building 57\%).
+Figure~\ref{fig:exp2} maps the single-location quality. When concentrated at a single station, the best locations lie in the
+\textbf{eastern dormitory/department area} (around Men's Dormitory~1 and Mingda Hall), near the most shortage-prone interior stations (second EE building 62\%, Forestry building 57\%).
 The current main hub, MRT Gongguan, sits at the south-west edge and is sub-optimal for the campus shortage population. An
 agent-movement animation (\texttt{results/anim.html}) shows the two scenarios side by side on a shared clock.
 
@@ -273,7 +273,7 @@ lever that complements rather than replaces dispatch optimization. The study is 
 \section*{Author Contributions}
 All six members contributed equally (1/6 each).
 \begin{table}[h]\centering\small
-\begin{tabular}{p{4.4cm}p{2.2cm}p{7.6cm}}
+\begin{tabular}{>{\raggedright\arraybackslash}p{4.6cm}l>{\raggedright\arraybackslash}p{7.6cm}}
 \toprule
 Member & Student ID & Role \\
 \midrule
