@@ -198,14 +198,14 @@ def map_exp2_static():
         vs.append(float(r["mean_with"]) / 60)
     vs = np.array(vs)
     sc = ax.scatter(xs, ys, s=130, c=vs, cmap="RdYlGn_r", edgecolors="k", linewidths=0.5, zorder=3)
-    plt.colorbar(sc, ax=ax, fraction=0.035, pad=0.02, label="調度站設此 → with-info 平均 cost (分)")
+    plt.colorbar(sc, ax=ax, fraction=0.035, pad=0.02, label="Dispatch here -> with-info mean cost (min)")
     best = min(rows, key=lambda r: float(r["mean_with"]))
     bx, by = _to_webmerc(*sd[int(best["dispatch"])][:2])
     ax.scatter([bx], [by], marker="*", s=420, c="gold", edgecolors="k", zorder=5,
-               label=f"最佳: {sd[int(best['dispatch'])][2]}")
+               label="Best location")
     ax.set_aspect("equal")   # 維持地圖長寬比（Web Mercator）
     _basemap(ax)
-    ax.set_title(f"附錄(實驗二)：單點調度位置品質（綠=cost 低=佳, 實證α≈{C.ALPHA_EMPIRICAL})")
+    ax.set_title(f"Appendix (Exp. 2): Single-location dispatch quality (green = lower cost = better, empirical a~{C.ALPHA_EMPIRICAL})")
     ax.set_xticks([]); ax.set_yticks([]); ax.legend(loc="upper right", fontsize=9)
     fig.tight_layout()
     p = os.path.join(C.RESULTS, "map_exp2.png"); fig.savefig(p, dpi=150); plt.close(fig)

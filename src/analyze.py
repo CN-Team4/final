@@ -33,14 +33,14 @@ def plot_exp1():
     fig, ax = plt.subplots(1, 2, figsize=(12, 4.5))
     ax[0].plot(a, wo, "o-", label="without info")
     ax[0].plot(a, wi, "s-", label="with info")
-    ax[0].set_xlabel("缺車比例 (%)"); ax[0].set_ylabel("平均 cost (分鐘)")
-    ax[0].set_title("實驗一：平均抵達 cost vs 缺車比例"); ax[0].legend()
+    ax[0].set_xlabel("Shortage rate (%)"); ax[0].set_ylabel("Mean cost (min)")
+    ax[0].set_title("Exp. 1: Mean arrival cost vs shortage rate"); ax[0].legend()
     ax[1].errorbar(a, diff, yerr=ci, fmt="^-", color="C2", capsize=3)
-    ax[1].axvspan(10, 20, alpha=0.12, color="orange", label="假說區間 10–20%")
+    ax[1].axvspan(10, 20, alpha=0.12, color="orange", label="Hypothesis range 10-20%")
     f_emp = C.ALPHA_EMPIRICAL / (1 + C.ALPHA_EMPIRICAL) * 100
-    ax[1].axvline(f_emp, color="red", ls="--", lw=1.5, label=f"實證缺車比例 {f_emp:.0f}%")
-    ax[1].set_xlabel("缺車比例 (%)"); ax[1].set_ylabel("cost 差 Δ (分鐘)")
-    ax[1].set_title("資訊邊際效益（cost 差，95% CI）"); ax[1].legend()
+    ax[1].axvline(f_emp, color="red", ls="--", lw=1.5, label=f"Empirical shortage {f_emp:.0f}%")
+    ax[1].set_xlabel("Shortage rate (%)"); ax[1].set_ylabel("Cost difference Δ (min)")
+    ax[1].set_title("Marginal value of information (cost difference, 95% CI)"); ax[1].legend()
     for s in ax: s.set_axisbelow(True)
     fig.tight_layout()
     p = os.path.join(C.RESULTS, "exp1_alpha.png"); fig.savefig(p); plt.close(fig)
@@ -60,11 +60,11 @@ def plot_tau():
         a = [float(r["shortage_ratio"]) * 100 for r in sub]
         diff = [float(r["mean_diff"]) / 60 for r in sub]
         ax.plot(a, diff, "o-", label=f"τ={t:g}")
-    ax.axvspan(10, 20, alpha=0.12, color="orange", label="假說區間")
+    ax.axvspan(10, 20, alpha=0.12, color="orange", label="Hypothesis range")
     f_emp = C.ALPHA_EMPIRICAL / (1 + C.ALPHA_EMPIRICAL) * 100
     ax.axvline(f_emp, color="red", ls="--", lw=1.2)
-    ax.set_xlabel("缺車比例 (%)"); ax.set_ylabel("cost 差 Δ (分鐘)")
-    ax.set_title("τ 敏感度（唯一行為假設）：不同繞路容忍下 Δ vs 缺車比例")
+    ax.set_xlabel("Shortage rate (%)"); ax.set_ylabel("Cost difference Δ (min)")
+    ax.set_title("τ sensitivity (the only behavioral assumption): Δ vs shortage rate")
     ax.legend(fontsize=9)
     fig.tight_layout()
     p = os.path.join(C.RESULTS, "tau_sensitivity.png"); fig.savefig(p); plt.close(fig)
@@ -93,13 +93,13 @@ def plot_heatmap():
     fig, axes = plt.subplots(1, 2, figsize=(14, 5))
     xt = [f"{sr[a]:.0f}" for a in alphas]
     base_total = max(cap_at.get((alphas[0], s), 0) for s in scales) if scales else 0
-    yt = [f"{cap_at.get((alphas[0], s), 0):.0f} 台" for s in scales]
-    for ax, Z, title, lab in [(axes[0], Zdiff, "資訊省下時間 Δ (分鐘)", "Δ (分)"),
-                              (axes[1], Zrel, "相對改善 (%)", "%")]:
+    yt = [f"{cap_at.get((alphas[0], s), 0):.0f}" for s in scales]
+    for ax, Z, title, lab in [(axes[0], Zdiff, "Time saved by information Δ (min)", "Δ (min)"),
+                              (axes[1], Zrel, "Relative improvement (%)", "%")]:
         im = ax.imshow(Z, origin="lower", aspect="auto", cmap="viridis")
         ax.set_xticks(range(len(alphas))); ax.set_xticklabels(xt)
         ax.set_yticks(range(len(scales))); ax.set_yticklabels(yt, fontsize=8)
-        ax.set_xlabel("缺車比例 (%)"); ax.set_ylabel("尖峰時段調度車數量（台）")
+        ax.set_xlabel("Shortage rate (%)"); ax.set_ylabel("Dispatched bikes in peak window")
         ax.set_title(title)
         for i in range(len(scales)):
             for j in range(len(alphas)):
@@ -121,8 +121,8 @@ def plot_heatmap():
                          fill=False, edgecolor="white", lw=2.5))
         plt.colorbar(im, ax=ax, fraction=0.046, pad=0.04, label=lab)
     f_emp = C.ALPHA_EMPIRICAL / (1 + C.ALPHA_EMPIRICAL) * 100
-    fig.suptitle(f"資訊能省下的時間（紅線=台大實際缺車約{f_emp:.0f}%，"
-                 f"橘線=實際調度量約100台，白框=合理調度量50–200台）")
+    fig.suptitle(f"Time saved by information (red = empirical shortage ~{f_emp:.0f}%, "
+                 f"orange = mid-estimate ~100 bikes, white box = plausible band 50-200 bikes)")
     fig.tight_layout()
     p = os.path.join(C.RESULTS, "heatmap.png"); fig.savefig(p); plt.close(fig)
     print("  ->", p)
@@ -164,8 +164,8 @@ def plot_pit():
     ax.bar(df["hour"].to_list(), df["p_hour"].to_list(), color="C3")
     for h in C.PEAK_HOURS:
         ax.axvspan(h - 0.5, h + 0.5, alpha=0.15, color="orange")
-    ax.set_xlabel("hour of day"); ax.set_ylabel("出借占比 P(t)")
-    ax.set_title("cluster 出發時間分布 P^i(t)（橘=尖峰窗）")
+    ax.set_xlabel("Hour of day"); ax.set_ylabel("Borrow share P(t)")
+    ax.set_title("Cluster departure-time distribution P^i(t) (orange = peak window)")
     fig.tight_layout()
     p = os.path.join(C.RESULTS, "pit_cluster.png"); fig.savefig(p); plt.close(fig)
     print("  ->", p)
